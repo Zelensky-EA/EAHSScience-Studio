@@ -1,0 +1,2420 @@
+[
+  {
+    "id": "punnett",
+    "unit": 5,
+    "title": "Punnett squares",
+    "topics": "5.3–5.4",
+    "assumptions": "Equal allele segregation, independent assortment for two loci, random fertilization, and equal viability. Two-locus linkage, epistasis, penetrance and selection are not included. Repeated gametes intentionally retain equal-probability cells. X-linked outcomes assume equal probability of X- and Y-bearing sperm.",
+    "fields": [
+      {
+        "key": "cross",
+        "label": "Inheritance",
+        "type": "select"
+      },
+      {
+        "key": "parent1",
+        "label": "Parent 1 genotype",
+        "type": "text"
+      },
+      {
+        "key": "parent2",
+        "label": "Parent 2 genotype",
+        "type": "text"
+      },
+      {
+        "key": "offspring",
+        "label": "Expected offspring count",
+        "type": "number"
+      },
+      {
+        "key": "filled",
+        "label": "Grid content",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "pedigree",
+    "unit": 5,
+    "title": "Pedigree analysis",
+    "topics": "5.3–5.4",
+    "assumptions": "A fixed three-generation family; unrelated founders; one locus; complete penetrance; no new mutation, phenocopy or ascertainment correction. Sex symbols represent the XX/XY inheritance model. Founder genotypes have equal prior probability within each sex/model; offspring are weighted by Mendelian transmission. Conditional probabilities depend on these teaching priors and are not clinical risk estimates. Compatibility is checked by enumerating complete family assignments, not by visual heuristics.",
+    "fields": [
+      {
+        "key": "inheritance",
+        "label": "Selected inheritance model",
+        "type": "select"
+      },
+      {
+        "key": "labels",
+        "label": "Genotype annotations",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "growth",
+    "unit": 8,
+    "title": "Population growth",
+    "topics": "8.3–8.4",
+    "assumptions": "Continuous time, closed population, constant r and K, no age structure or time delay. Analytic solutions avoid numerical integration error. For r > 0, logistic growth is greatest at N = K/2; a population starting above K declines toward K. Negative r is permitted, but the logistic model above K can then diverge and is limited to its finite solution domain.",
+    "fields": [
+      {
+        "key": "model",
+        "label": "Growth model",
+        "type": "select"
+      },
+      {
+        "key": "n0",
+        "label": "Starting population N₀ (individuals)",
+        "type": "number"
+      },
+      {
+        "key": "r",
+        "label": "Intrinsic rate r (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "k",
+        "label": "Carrying capacity K (individuals)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span (time units)",
+        "type": "number"
+      },
+      {
+        "key": "view",
+        "label": "Graph quantity",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "prey",
+    "unit": 8,
+    "title": "Predator–prey dynamics",
+    "topics": "8.5",
+    "assumptions": "Homogeneous populations, constant rates, mass-action predation, and no immigration or age structure. The extension replaces αx with αx(1−x/K); it retains linear predation and is not a saturating functional-response model. Fourth-order Runge–Kutta integration uses 12,000 steps. These are model outputs, not field counts. Impossible numerical trajectories stop with an error.",
+    "fields": [
+      {
+        "key": "model",
+        "label": "Model",
+        "type": "select"
+      },
+      {
+        "key": "preyName",
+        "label": "Prey label",
+        "type": "text"
+      },
+      {
+        "key": "predName",
+        "label": "Predator label",
+        "type": "text"
+      },
+      {
+        "key": "prey0",
+        "label": "Initial prey (individuals)",
+        "type": "number"
+      },
+      {
+        "key": "pred0",
+        "label": "Initial predators (individuals)",
+        "type": "number"
+      },
+      {
+        "key": "alpha",
+        "label": "Prey growth α (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "beta",
+        "label": "Predation β (predator⁻¹ time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "gamma",
+        "label": "Predator loss γ (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "delta",
+        "label": "Recruitment δ (prey⁻¹ time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "k",
+        "label": "Prey carrying capacity K",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span (time units)",
+        "type": "number"
+      },
+      {
+        "key": "view",
+        "label": "Graph view",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "gel",
+    "unit": 6,
+    "title": "Gel electrophoresis",
+    "topics": "6.8",
+    "assumptions": "A schematic for linear double-stranded DNA from 100 to 10,000 bp. The log-size migration relation is an approximation with an adjustable plotting span, not a calibrated gel prediction. Gel concentration, voltage, buffer and DNA conformation are not simulated. Circular uncut plasmids do not obey this linear-DNA model. Fragments closer than the resolution threshold are merged into one displayed band; brightness scales with represented DNA mass assuming equal molecule counts, not measured loading.",
+    "fields": [
+      {
+        "key": "ladder",
+        "label": "DNA ladder (bp)",
+        "type": "text"
+      },
+      {
+        "key": "lanes",
+        "label": "Sample lanes",
+        "type": "textarea"
+      },
+      {
+        "key": "run",
+        "label": "Relative migration span (mm)",
+        "type": "number"
+      },
+      {
+        "key": "resolution",
+        "label": "Band resolution (mm)",
+        "type": "number"
+      },
+      {
+        "key": "labels",
+        "label": "Size labels",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "pipette",
+    "unit": 0,
+    "title": "Micropipette readings",
+    "topics": "Laboratory skills",
+    "assumptions": "Conventional three-digit teaching displays: P20 = tens/ones/tenths µL; P200 = hundreds/tens/ones µL; P1000 = thousands/hundreds/tens µL. Hardware displays and ranges vary: use your instrument manual. Readings are nominal settings, not delivery guarantees. Statistics describe entered measurements; they do not establish calibration acceptance.",
+    "fields": [
+      {
+        "key": "instrument",
+        "label": "Conventional pipette model",
+        "type": "select"
+      },
+      {
+        "key": "volume",
+        "label": "Target volume (µL)",
+        "type": "number"
+      },
+      {
+        "key": "exercise",
+        "label": "Exercise",
+        "type": "select"
+      },
+      {
+        "key": "replicates",
+        "label": "Replicate delivered volumes (µL)",
+        "type": "textarea"
+      }
+    ]
+  },
+  {
+    "id": "ph",
+    "unit": 1,
+    "title": "pH & acid–base models",
+    "topics": "1.1; supporting chemistry",
+    "assumptions": "Ideal dilute aqueous solutions at 25 °C: concentration approximates activity. Strong-acid calculation includes water autoionization. Weak-acid calculation solves charge balance, mass balance and Kₐ together, including water autoionization. The buffer uses the Henderson–Hasselbalch approximation with equilibrium concentrations approximated by supplied concentrations; it is not a titration or buffer-capacity simulation. pH paper colors are illustrative, not a calibration chart. The displayed meter is rounded to 0.01 pH; no instrument uncertainty is inferred.",
+    "fields": [
+      {
+        "key": "method",
+        "label": "Calculation",
+        "type": "select"
+      },
+      {
+        "key": "ph",
+        "label": "Meter pH",
+        "type": "number"
+      },
+      {
+        "key": "reference",
+        "label": "Comparison pH",
+        "type": "number"
+      },
+      {
+        "key": "conc",
+        "label": "Analytical acid concentration (M)",
+        "type": "number"
+      },
+      {
+        "key": "ka",
+        "label": "Acid dissociation constant Kₐ",
+        "type": "number"
+      },
+      {
+        "key": "pka",
+        "label": "Buffer pKₐ",
+        "type": "number"
+      },
+      {
+        "key": "acid",
+        "label": "Buffer [HA] (M)",
+        "type": "number"
+      },
+      {
+        "key": "base",
+        "label": "Buffer [A⁻] (M)",
+        "type": "number"
+      },
+      {
+        "key": "display",
+        "label": "Reading figure",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "water-bonds",
+    "unit": 1,
+    "title": "Water & hydrogen bonding",
+    "topics": "1.1",
+    "assumptions": "Schematic molecular arrangements, not a molecular-dynamics simulation. Temperature changes a qualitative motion indicator, not a calculated bond lifetime. Ice geometry is illustrative rather than crystallographically exact.",
+    "fields": [
+      {
+        "key": "arrangement",
+        "label": "Arrangement",
+        "type": "select"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      },
+      {
+        "key": "bond",
+        "label": "Highlight",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "atoms",
+    "unit": 1,
+    "title": "Element & atom accounting",
+    "topics": "1.2",
+    "assumptions": "Formula parsing counts atoms; it does not infer molecular structure, bond energy, or reaction feasibility.",
+    "fields": [
+      {
+        "key": "formula",
+        "label": "Molecular formula",
+        "type": "text"
+      },
+      {
+        "key": "molecules",
+        "label": "Number of molecules",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "polymers",
+    "unit": 1,
+    "title": "Polymer assembly & hydrolysis",
+    "topics": "1.3",
+    "assumptions": "Each displayed link represents one condensation/hydrolysis event. This is an accounting model, not a universal cellular synthesis mechanism; nucleic-acid synthesis, for example, uses activated nucleotides.",
+    "fields": [
+      {
+        "key": "monomers",
+        "label": "Monomers in chain",
+        "type": "number"
+      },
+      {
+        "key": "broken",
+        "label": "Bonds hydrolyzed",
+        "type": "number"
+      },
+      {
+        "key": "reaction",
+        "label": "Reaction",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "carbohydrates",
+    "unit": 1,
+    "title": "Carbohydrate structure",
+    "topics": "1.4",
+    "assumptions": "Stylized glucose residues, not atomic structures. Branch frequency is schematic; starch also includes branched amylopectin. No rate of digestion is predicted.",
+    "fields": [
+      {
+        "key": "kind",
+        "label": "Polysaccharide",
+        "type": "select"
+      },
+      {
+        "key": "length",
+        "label": "Displayed backbone residues",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "lipids",
+    "unit": 1,
+    "title": "Lipids & membrane packing",
+    "topics": "1.5; 2.3",
+    "assumptions": "Schematic packing only. No physical fluidity value is calculated. Cholesterol restrains movement at higher temperatures and disrupts tight packing at lower temperatures; behavior depends on membrane composition.",
+    "fields": [
+      {
+        "key": "kind",
+        "label": "Lipid",
+        "type": "select"
+      },
+      {
+        "key": "unsaturated",
+        "label": "Cis-unsaturated tails",
+        "type": "number"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      },
+      {
+        "key": "cholesterol",
+        "label": "Cholesterol",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "nucleic",
+    "unit": 1,
+    "title": "DNA & RNA strand studio",
+    "topics": "1.6; 6.1",
+    "assumptions": "Sequence complementarity only; secondary structure, melting temperature and biochemical kinetics are not predicted.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "Input strand, 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "product",
+        "label": "Complement",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "protein",
+    "unit": 1,
+    "title": "Protein interactions & disruption",
+    "topics": "1.7",
+    "assumptions": "Qualitative examples. Actual effects depend on residues and conditions; unfolding is not calculated. Heat or pH do not automatically break peptide bonds. Disulfide reduction changes covalent crosslinks.",
+    "fields": [
+      {
+        "key": "interaction",
+        "label": "Interaction",
+        "type": "select"
+      },
+      {
+        "key": "change",
+        "label": "Perturbation",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "trafficking",
+    "unit": 2,
+    "title": "Organelle disruption & trafficking",
+    "topics": "2.1",
+    "assumptions": "A canonical secreted protein is assumed to have an ER-targeting signal. Free-ribosome products and organelle-targeted proteins can follow different routes. Disruption outcomes are schematic, not calculated protein concentrations.",
+    "fields": [
+      {
+        "key": "block",
+        "label": "Disrupted component",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "surface",
+    "unit": 2,
+    "title": "Cell size & diffusion distance",
+    "topics": "2.2",
+    "assumptions": "Ideal geometries without membrane folds. For cylinders, size means radius; both end caps are included. Surface-area-to-volume ratio does not independently determine a maximum viable cell size.",
+    "fields": [
+      {
+        "key": "shape",
+        "label": "Geometry",
+        "type": "select"
+      },
+      {
+        "key": "size",
+        "label": "Radius or cube edge (µm)",
+        "type": "number"
+      },
+      {
+        "key": "length",
+        "label": "Cylinder length (µm)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "diffusion",
+    "unit": 2,
+    "title": "Diffusion & transport saturation",
+    "topics": "2.4–2.6",
+    "assumptions": "Compartments remain well mixed and volumes fixed. Carrier mode uses an illustrative reversible saturable flux P(CA−CB)/(1+(CA+CB)/Km). Coefficients are entered model parameters, not inferred membrane permeabilities. No membrane potential or active transport is included.",
+    "fields": [
+      {
+        "key": "a",
+        "label": "Initial concentration A (mM)",
+        "type": "number"
+      },
+      {
+        "key": "b",
+        "label": "Initial concentration B (mM)",
+        "type": "number"
+      },
+      {
+        "key": "va",
+        "label": "Volume A (mL)",
+        "type": "number"
+      },
+      {
+        "key": "vb",
+        "label": "Volume B (mL)",
+        "type": "number"
+      },
+      {
+        "key": "permeability",
+        "label": "Exchange coefficient (mL/time)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      },
+      {
+        "key": "transport",
+        "label": "Transport mechanism",
+        "type": "select"
+      },
+      {
+        "key": "km",
+        "label": "Carrier half-saturation scale (mM)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "permeability",
+    "unit": 2,
+    "title": "Selective membrane permeability",
+    "topics": "2.3–2.6",
+    "assumptions": "Qualitative permeability comparison. A matching protein represents an appropriate channel/carrier, not any arbitrary membrane protein. This tool predicts a route, not a numerical transport rate.",
+    "fields": [
+      {
+        "key": "molecule",
+        "label": "Molecule",
+        "type": "select"
+      },
+      {
+        "key": "protein",
+        "label": "Available protein",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "water-potential",
+    "unit": 2,
+    "title": "Water potential",
+    "topics": "2.7",
+    "assumptions": "Ideal solutions, fixed temperature, water-permeable membrane, and no gravity or matric contribution. Output predicts initial direction, not flow rate or final cell volume. Temperature uses °C + 273.15. MPa = bar / 10. Pressure can counteract solute effects.",
+    "fields": [
+      {
+        "key": "ca",
+        "label": "Solute concentration A (mol/L)",
+        "type": "number"
+      },
+      {
+        "key": "ia",
+        "label": "Dissociation factor A",
+        "type": "number"
+      },
+      {
+        "key": "pa",
+        "label": "Pressure potential A (MPa)",
+        "type": "number"
+      },
+      {
+        "key": "cb",
+        "label": "Solute concentration B (mol/L)",
+        "type": "number"
+      },
+      {
+        "key": "ib",
+        "label": "Dissociation factor B",
+        "type": "number"
+      },
+      {
+        "key": "pb",
+        "label": "Pressure potential B (MPa)",
+        "type": "number"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "tonicity",
+    "unit": 2,
+    "title": "Tonicity & cell volume",
+    "topics": "2.7",
+    "assumptions": "External reservoir is effectively infinite. Internal nonpenetrating solute amount is conserved. Penetrating solute equilibrates and contributes no sustained osmotic gradient in this simplified model. Animal-cell volume prediction ignores rupture. Plant-cell walls and pressure prevent using the animal-volume formula as a plant-cell prediction.",
+    "fields": [
+      {
+        "key": "inside",
+        "label": "Internal nonpenetrating solutes (mOsm/L)",
+        "type": "number"
+      },
+      {
+        "key": "outside",
+        "label": "External nonpenetrating solutes (mOsm/L)",
+        "type": "number"
+      },
+      {
+        "key": "penetrating",
+        "label": "External penetrating solutes (mOsm/L)",
+        "type": "number"
+      },
+      {
+        "key": "cell",
+        "label": "Cell type",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "osmosis-lab",
+    "unit": 2,
+    "title": "Osmosis data investigation",
+    "topics": "2.7",
+    "assumptions": "Fits an ordinary least-squares line to entered percent changes. The zero crossing is an estimate only when a linear approximation is justified and measurements bracket zero. Assumes an open solution with sucrose (i=1) when calculating its solute potential. Tissue pressure is not inferred.",
+    "fields": [
+      {
+        "key": "measurements",
+        "label": "Concentration (M), initial mass (g), final mass (g)",
+        "type": "textarea"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "pumps",
+    "unit": 2,
+    "title": "Ion gradients & active transport",
+    "topics": "2.8",
+    "assumptions": "Stoichiometric pump accounting; ion concentrations do not change from the displayed cycle count. Nernst potential is a college extension for a K⁺-selective membrane and is not the full resting potential.",
+    "fields": [
+      {
+        "key": "cycles",
+        "label": "Na⁺/K⁺ pump cycles",
+        "type": "number"
+      },
+      {
+        "key": "inside",
+        "label": "Internal K⁺ (mM)",
+        "type": "number"
+      },
+      {
+        "key": "outside",
+        "label": "External K⁺ (mM)",
+        "type": "number"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "compartments",
+    "unit": 2,
+    "title": "Compartmentalized reactions",
+    "topics": "2.9",
+    "assumptions": "Illustrative reaction with a competitive inhibitor. Boundary condition selects whether inhibitor reaches enzyme; transport rates, volume changes and substrate delivery are not simulated.",
+    "fields": [
+      {
+        "key": "substrate",
+        "label": "Substrate (mM)",
+        "type": "number"
+      },
+      {
+        "key": "inhibitor",
+        "label": "Inhibitor outside compartment (mM)",
+        "type": "number"
+      },
+      {
+        "key": "km",
+        "label": "Km (mM)",
+        "type": "number"
+      },
+      {
+        "key": "ki",
+        "label": "Ki (mM)",
+        "type": "number"
+      },
+      {
+        "key": "vmax",
+        "label": "Vmax (µmol/min)",
+        "type": "number"
+      },
+      {
+        "key": "membrane",
+        "label": "Compartment boundary",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "endosymbiosis",
+    "unit": 2,
+    "title": "Endosymbiosis evidence",
+    "topics": "2.10",
+    "assumptions": "Evidence explorer, not a historical simulation. Individual observations differ in strength and are not assigned numerical proof scores. Shared features alone do not uniquely establish a full evolutionary sequence.",
+    "fields": [
+      {
+        "key": "evidence",
+        "label": "Observation",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "enzymes",
+    "unit": 3,
+    "title": "Enzyme investigation studio",
+    "topics": "3.1–3.2",
+    "assumptions": "Michaelis–Menten steady-state model with irreversible product formation and no product inhibition. Enzyme is entered in µM, so rate is µM/min; progress converts to mM/min. Temperature uses a stated illustrative Q10=2 rise with a logistic high-temperature activity loss; pH uses a Gaussian response. These response functions are not measured kinetics or irreversible time-dependent denaturation. Km, kcat and inhibition mechanisms are college extensions.",
+    "fields": [
+      {
+        "key": "view",
+        "label": "View",
+        "type": "select"
+      },
+      {
+        "key": "substrate",
+        "label": "Starting substrate (mM)",
+        "type": "number"
+      },
+      {
+        "key": "enzyme",
+        "label": "Enzyme concentration (µM)",
+        "type": "number"
+      },
+      {
+        "key": "kcat",
+        "label": "Turnover kcat (min⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "km",
+        "label": "Km (mM)",
+        "type": "number"
+      },
+      {
+        "key": "temperature",
+        "label": "Temperature (°C)",
+        "type": "number"
+      },
+      {
+        "key": "ph",
+        "label": "pH",
+        "type": "number"
+      },
+      {
+        "key": "optimum",
+        "label": "Example enzyme optimum pH",
+        "type": "number"
+      },
+      {
+        "key": "inhibition",
+        "label": "Inhibitor mechanism",
+        "type": "select"
+      },
+      {
+        "key": "inhibitor",
+        "label": "Inhibitor (mM)",
+        "type": "number"
+      },
+      {
+        "key": "ki",
+        "label": "Inhibitor Ki (mM)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Reaction time (min)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "activation",
+    "unit": 3,
+    "title": "Activation energy & catalysis",
+    "topics": "3.1; 3.3",
+    "assumptions": "Illustrative reaction-coordinate paths, not measured molecular energy surfaces. Both barriers must exceed reactant and product energy.",
+    "fields": [
+      {
+        "key": "barrier",
+        "label": "Uncatalyzed barrier (kJ/mol)",
+        "type": "number"
+      },
+      {
+        "key": "lowering",
+        "label": "Enzyme barrier reduction (kJ/mol)",
+        "type": "number"
+      },
+      {
+        "key": "dg",
+        "label": "Reaction ΔG (kJ/mol)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "coupling",
+    "unit": 3,
+    "title": "ATP coupling & feedback",
+    "topics": "3.3",
+    "assumptions": "Energetic bookkeeping assumes reactions are mechanistically coupled. ATP free-energy change is entered for the conditions and is not a universal constant. Feedback is a qualitative pathway example.",
+    "fields": [
+      {
+        "key": "required",
+        "label": "Energy-requiring reaction ΔG (kJ/mol)",
+        "type": "number"
+      },
+      {
+        "key": "atp",
+        "label": "ATP hydrolysis ΔG (kJ/mol)",
+        "type": "number"
+      },
+      {
+        "key": "count",
+        "label": "ATP molecules coupled",
+        "type": "number"
+      },
+      {
+        "key": "feedback",
+        "label": "End-product condition",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "photosystems",
+    "unit": 3,
+    "title": "Photosynthesis & electron flow",
+    "topics": "3.4",
+    "assumptions": "Stoichiometric upper-bound teaching model. Uses an assumed 3 ATP per 8 photons for bookkeeping; actual ATP production depends on coupling and cyclic electron flow. Does not simulate carbon-fixation kinetics, photorespiration, or absorbed-light efficiency. Blocking ATP synthase can also impede electron flow; that feedback is not dynamically modeled.",
+    "fields": [
+      {
+        "key": "light",
+        "label": "Available photon events / interval",
+        "type": "number"
+      },
+      {
+        "key": "co2",
+        "label": "CO₂ available / interval",
+        "type": "number"
+      },
+      {
+        "key": "block",
+        "label": "Perturbation",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "light-response",
+    "unit": 3,
+    "title": "Photosynthesis investigation",
+    "topics": "3.4",
+    "assumptions": "Empirical saturating response with constant respiration. Irradiance is in relative units. Leaf-disk view maps accumulated net gas to float fraction using an explicit illustrative threshold distribution; it is not a calibrated prediction for real disks. Pigment composition, CO₂ limitation and photoinhibition are outside this model.",
+    "fields": [
+      {
+        "key": "pmax",
+        "label": "Maximum gross rate (µmol O₂/min)",
+        "type": "number"
+      },
+      {
+        "key": "half",
+        "label": "Half-saturation irradiance",
+        "type": "number"
+      },
+      {
+        "key": "respiration",
+        "label": "Respiration rate (µmol O₂/min)",
+        "type": "number"
+      },
+      {
+        "key": "light",
+        "label": "Maximum irradiance shown",
+        "type": "number"
+      },
+      {
+        "key": "view",
+        "label": "View",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "respiration-model",
+    "unit": 3,
+    "title": "Respiration & chemiosmosis",
+    "topics": "3.5",
+    "assumptions": "Qualitative steady-state disruption examples with adjustable ATP yield for accounting. A blocked ATP synthase eventually slows ETC via backpressure; an uncoupler separates electron flow from ATP production. No detailed carrier kinetics or fixed ATP-per-glucose total is asserted.",
+    "fields": [
+      {
+        "key": "condition",
+        "label": "Condition",
+        "type": "select"
+      },
+      {
+        "key": "electrons",
+        "label": "Potential electron pairs / interval",
+        "type": "number"
+      },
+      {
+        "key": "yield",
+        "label": "Assumed ATP per electron pair",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "fermentation",
+    "unit": 3,
+    "title": "Fermentation & NAD⁺ regeneration",
+    "topics": "3.5",
+    "assumptions": "Ideal stoichiometric accounting for the listed pathways. Does not predict real fermentation rate, cell growth or gas pressure.",
+    "fields": [
+      {
+        "key": "glucose",
+        "label": "Glucose molecules processed",
+        "type": "number"
+      },
+      {
+        "key": "pathway",
+        "label": "Fermentation",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "respirometer",
+    "unit": 3,
+    "title": "Respirometer data investigation",
+    "topics": "3.5",
+    "assumptions": "Entered data are measurements supplied by the user. Assumes CO₂ absorption, comparable temperature/pressure effects and calibrated displacement volumes. Uses endpoint average rate, not a mechanistic respiration prediction.",
+    "fields": [
+      {
+        "key": "measurements",
+        "label": "Time (min), experimental displacement (mL), control displacement (mL)",
+        "type": "textarea"
+      },
+      {
+        "key": "mass",
+        "label": "Organism mass (g)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "receptors",
+    "unit": 4,
+    "title": "Communication & receptor binding",
+    "topics": "4.1–4.2",
+    "assumptions": "Equilibrium binding with no cooperativity or ligand depletion. Occupancy is not the same as downstream response. Mismatch is modeled as no specific binding. Communication route is schematic and does not calculate transport time.",
+    "fields": [
+      {
+        "key": "route",
+        "label": "Communication route",
+        "type": "select"
+      },
+      {
+        "key": "ligand",
+        "label": "Ligand concentration (nM)",
+        "type": "number"
+      },
+      {
+        "key": "kd",
+        "label": "Dissociation constant Kd (nM)",
+        "type": "number"
+      },
+      {
+        "key": "receptors",
+        "label": "Number of receptors",
+        "type": "number"
+      },
+      {
+        "key": "match",
+        "label": "Ligand specificity",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "signaling",
+    "unit": 4,
+    "title": "Signal transduction & amplification",
+    "topics": "4.3",
+    "assumptions": "Discrete illustrative cascade with a 10,000-unit response ceiling. Amplification units are arbitrary and not fitted biochemical rate constants. Constitutive relay activation bypasses the receptor but does not bypass an effector block.",
+    "fields": [
+      {
+        "key": "input",
+        "label": "Activated receptors",
+        "type": "number"
+      },
+      {
+        "key": "amplification",
+        "label": "Amplification per stage",
+        "type": "number"
+      },
+      {
+        "key": "block",
+        "label": "Disruption",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "feedback",
+    "unit": 4,
+    "title": "Feedback & homeostasis",
+    "topics": "4.4",
+    "assumptions": "Deviation magnitude is nonnegative. The positive example is bounded amplification, not a model of every biological positive-feedback system. The positive ceiling is a saturation limit, not a homeostatic set point. No delay or oscillatory controller is included.",
+    "fields": [
+      {
+        "key": "type",
+        "label": "Feedback",
+        "type": "select"
+      },
+      {
+        "key": "initial",
+        "label": "Initial deviation from set point",
+        "type": "number"
+      },
+      {
+        "key": "gain",
+        "label": "Response gain (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "ceiling",
+        "label": "Positive-feedback capacity",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "cell-cycle",
+    "unit": 4,
+    "title": "Cell cycle, DNA content & mitosis",
+    "topics": "4.5",
+    "assumptions": "Diploid cell with conventional mitosis. Anaphase counts separated sister chromatids as chromosomes within the still-undivided cell. C indicates DNA content relative to one unreplicated haploid genome.",
+    "fields": [
+      {
+        "key": "haploid",
+        "label": "Haploid chromosome number n",
+        "type": "number"
+      },
+      {
+        "key": "stage",
+        "label": "Stage",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "mitotic-index",
+    "unit": 4,
+    "title": "Mitotic-index investigation",
+    "topics": "4.5",
+    "assumptions": "Duration inference assumes a steady-state asynchronous population with comparable survival and sampling. A synchronized population or changing proliferation can invalidate the estimate.",
+    "fields": [
+      {
+        "key": "interphase",
+        "label": "Interphase cells",
+        "type": "number"
+      },
+      {
+        "key": "prophase",
+        "label": "Prophase cells",
+        "type": "number"
+      },
+      {
+        "key": "metaphase",
+        "label": "Metaphase cells",
+        "type": "number"
+      },
+      {
+        "key": "anaphase",
+        "label": "Anaphase cells",
+        "type": "number"
+      },
+      {
+        "key": "telophase",
+        "label": "Telophase cells",
+        "type": "number"
+      },
+      {
+        "key": "cycle",
+        "label": "Assumed cycle duration (hours)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "checkpoints",
+    "unit": 4,
+    "title": "Cell-cycle checkpoints",
+    "topics": "4.6",
+    "assumptions": "Rule-based schematic of selected checkpoints. Real regulation involves multiple pathways; a single defect does not guarantee cancer or unrestricted proliferation.",
+    "fields": [
+      {
+        "key": "growth",
+        "label": "Growth signal",
+        "type": "select"
+      },
+      {
+        "key": "damage",
+        "label": "DNA damage",
+        "type": "select"
+      },
+      {
+        "key": "spindle",
+        "label": "Spindle attachment",
+        "type": "select"
+      },
+      {
+        "key": "mutation",
+        "label": "Checkpoint defect",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "meiosis",
+    "unit": 5,
+    "title": "Meiosis & nondisjunction",
+    "topics": "5.1–5.2",
+    "assumptions": "One nondisjunction event in one chromosome pair is assumed. Crossing over is not included in the combination count. Meiosis II error occurs in one of the two cells. Gamete types are equally represented in this schematic.",
+    "fields": [
+      {
+        "key": "haploid",
+        "label": "Haploid number n",
+        "type": "number"
+      },
+      {
+        "key": "error",
+        "label": "Segregation",
+        "type": "select"
+      },
+      {
+        "key": "stage",
+        "label": "Displayed process",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "linkage",
+    "unit": 5,
+    "title": "Linkage & recombination",
+    "topics": "5.2; 5.4",
+    "assumptions": "Testcross to ab/ab with equal viability and no segregation distortion. Recombination fraction cannot exceed 0.5. Recombination percentage approximates map distance for short intervals; multiple crossovers cause underestimation for longer intervals.",
+    "fields": [
+      {
+        "key": "rf",
+        "label": "Recombination fraction",
+        "type": "number"
+      },
+      {
+        "key": "phase",
+        "label": "Heterozygote phase",
+        "type": "select"
+      },
+      {
+        "key": "total",
+        "label": "Testcross offspring",
+        "type": "number"
+      },
+      {
+        "key": "observed",
+        "label": "Observed recombinant offspring",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "nonmendelian",
+    "unit": 5,
+    "title": "Multiple alleles & epistasis",
+    "topics": "5.4",
+    "assumptions": "ABO uses the standard simplified single-locus model; rare exceptions are excluded. Epistasis example defines aa as masking the B locus, giving 9:3:4 under independent assortment and equal viability.",
+    "fields": [
+      {
+        "key": "example",
+        "label": "Example",
+        "type": "select"
+      },
+      {
+        "key": "parent1",
+        "label": "ABO parent 1",
+        "type": "select"
+      },
+      {
+        "key": "parent2",
+        "label": "ABO parent 2",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "polygenic",
+    "unit": 5,
+    "title": "Polygenic trait distributions",
+    "topics": "5.4",
+    "assumptions": "Two heterozygous parents at every independent locus; additive equal effects; no epistasis or dominance. Environment adds independent normally distributed variation. These assumptions do not describe every quantitative trait.",
+    "fields": [
+      {
+        "key": "loci",
+        "label": "Independent additive loci",
+        "type": "number"
+      },
+      {
+        "key": "effect",
+        "label": "Trait units per contributing allele",
+        "type": "number"
+      },
+      {
+        "key": "environment",
+        "label": "Environmental SD (trait units)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "reaction-norms",
+    "unit": 5,
+    "title": "Environment & phenotype",
+    "topics": "5.5",
+    "assumptions": "Illustrative linear reaction norms over a limited environment range. Negative trait values may be meaningful only for traits defined as deviations; choose appropriate baselines. No heritability is estimated.",
+    "fields": [
+      {
+        "key": "a",
+        "label": "Genotype A baseline",
+        "type": "number"
+      },
+      {
+        "key": "aslope",
+        "label": "Genotype A response slope",
+        "type": "number"
+      },
+      {
+        "key": "b",
+        "label": "Genotype B baseline",
+        "type": "number"
+      },
+      {
+        "key": "bslope",
+        "label": "Genotype B response slope",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "replication",
+    "unit": 6,
+    "title": "DNA replication fork",
+    "topics": "6.2",
+    "assumptions": "One fork schematic; sequence complementarity is exact. Okazaki fragment lengths, origin spacing, enzyme movement and error rates are not simulated.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "Parent strand 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "movement",
+        "label": "Fork moves along displayed parent",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "transcription",
+    "unit": 6,
+    "title": "Transcription & RNA processing",
+    "topics": "6.3",
+    "assumptions": "RNA conversion and selected position removal are exact sequence operations. The removed interval is designated as an intron/excluded exon for this teaching example; real splice-site recognition is not inferred. No promoter or transcription start site is predicted.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "DNA sequence, 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "strand",
+        "label": "Input DNA strand",
+        "type": "select"
+      },
+      {
+        "key": "processing",
+        "label": "Processing",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "translation",
+    "unit": 6,
+    "title": "Translation & reading frames",
+    "topics": "6.4",
+    "assumptions": "Standard genetic code, explicit frame offset, and no automatic initiation-site selection. Output uses amino-acid one-letter codes and stops at the first in-frame stop. An incomplete terminal codon is ignored.",
+    "fields": [
+      {
+        "key": "rna",
+        "label": "RNA, 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "frame",
+        "label": "Starting offset (0, 1 or 2)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "operons",
+    "unit": 6,
+    "title": "Gene regulation: operons",
+    "topics": "6.5",
+    "assumptions": "lac uses lactose as shorthand for the allolactose inducer; low glucose enables CAP-mediated activation. trp shows repressor/corepressor logic and omits attenuation. Outputs are qualitative levels, not transcript concentrations.",
+    "fields": [
+      {
+        "key": "kind",
+        "label": "Example",
+        "type": "select"
+      },
+      {
+        "key": "lactose",
+        "label": "Lactose",
+        "type": "select"
+      },
+      {
+        "key": "glucose",
+        "label": "Glucose",
+        "type": "select"
+      },
+      {
+        "key": "tryptophan",
+        "label": "Tryptophan",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "specialization",
+    "unit": 6,
+    "title": "Cell specialization & expression",
+    "topics": "6.5–6.6",
+    "assumptions": "A schematic expression program with housekeeping expression retained and cell-type-specific expression controlled by one regulator. Real cell identity involves many interacting regulators and chromatin states. Numerical output is normalized model expression, not measured RNA abundance.",
+    "fields": [
+      {
+        "key": "cell",
+        "label": "Cell program",
+        "type": "select"
+      },
+      {
+        "key": "regulator",
+        "label": "Program-specific regulator",
+        "type": "select"
+      },
+      {
+        "key": "accessibility",
+        "label": "Target-gene accessibility (fraction)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "mutations",
+    "unit": 6,
+    "title": "Mutation consequences",
+    "topics": "6.7",
+    "assumptions": "This tool analyzes a specified coding frame beginning at the first base. It does not predict protein function, organismal fitness or regulatory effects. Standard genetic code; one-base indels shift the frame.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "Coding DNA 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "position",
+        "label": "Mutation position (1-based)",
+        "type": "number"
+      },
+      {
+        "key": "kind",
+        "label": "Change",
+        "type": "select"
+      },
+      {
+        "key": "base",
+        "label": "New base",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "pcr",
+    "unit": 6,
+    "title": "PCR amplification",
+    "topics": "6.8",
+    "assumptions": "Constant efficiency with no plateau or reagent depletion. Counts are expected copies, not necessarily integers. Target length is entered, not inferred from primers. This view does not model nonspecific binding or primer design.",
+    "fields": [
+      {
+        "key": "copies",
+        "label": "Starting target copies",
+        "type": "number"
+      },
+      {
+        "key": "cycles",
+        "label": "Cycles",
+        "type": "number"
+      },
+      {
+        "key": "efficiency",
+        "label": "Efficiency per cycle (fraction)",
+        "type": "number"
+      },
+      {
+        "key": "length",
+        "label": "Target amplicon length (bp)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "digest",
+    "unit": 6,
+    "title": "Restriction digest & fragments",
+    "topics": "6.8",
+    "assumptions": "Exact recognition-site scan for the listed enzymes, including circular wraparound sites. Assumes complete digestion and ignores methylation, star activity and enzyme-accessibility effects. Cut positions refer to the displayed strand. Uncut circular DNA does not migrate like equal-size linear DNA.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "DNA 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "enzyme",
+        "label": "Restriction enzyme",
+        "type": "select"
+      },
+      {
+        "key": "shape",
+        "label": "DNA topology",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "transformation",
+    "unit": 6,
+    "title": "Transformation & selection",
+    "topics": "6.8",
+    "assumptions": "Expected transformant count = cells × probability. Assumes all cells viable, marker expression complete before plating, and susceptible cells unable to grow on antibiotic. No colony-count calibration, competence protocol or resistance dosage is modeled.",
+    "fields": [
+      {
+        "key": "cells",
+        "label": "Starting cells",
+        "type": "number"
+      },
+      {
+        "key": "probability",
+        "label": "Transformation probability",
+        "type": "number"
+      },
+      {
+        "key": "plasmid",
+        "label": "Plasmid added",
+        "type": "select"
+      },
+      {
+        "key": "antibiotic",
+        "label": "Selection medium",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "selection",
+    "unit": 7,
+    "title": "Selection & resistance evolution",
+    "topics": "7.1–7.2; 7.8",
+    "assumptions": "Infinite diploid population, random mating, constant viability selection, no drift, mutation or migration. Resistance scenario is a conceptual allele-fitness example, not a bacterial clinical or treatment model.",
+    "fields": [
+      {
+        "key": "p",
+        "label": "Initial A allele frequency",
+        "type": "number"
+      },
+      {
+        "key": "waa",
+        "label": "Fitness AA",
+        "type": "number"
+      },
+      {
+        "key": "wah",
+        "label": "Fitness Aa",
+        "type": "number"
+      },
+      {
+        "key": "wrr",
+        "label": "Fitness aa",
+        "type": "number"
+      },
+      {
+        "key": "generations",
+        "label": "Generations",
+        "type": "number"
+      },
+      {
+        "key": "scenario",
+        "label": "Interpretation",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "trait-selection",
+    "unit": 7,
+    "title": "Selection on trait distributions",
+    "topics": "7.2; 7.11",
+    "assumptions": "One generation of selection on a normally distributed standardized trait. Fitness functions are explicit teaching examples: exp(sx), exp(−sx²), or 1+sx². No inheritance response or universal ecological optimum is inferred.",
+    "fields": [
+      {
+        "key": "type",
+        "label": "Selection",
+        "type": "select"
+      },
+      {
+        "key": "strength",
+        "label": "Selection strength",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "artificial",
+    "unit": 7,
+    "title": "Artificial selection response",
+    "topics": "7.3",
+    "assumptions": "College extension: quantitative-genetic expectation under additive inheritance and stable environment. Selection differential is fixed relative to the changing population mean each generation. Heritability is population/environment-specific and does not measure how genetically determined an individual trait is.",
+    "fields": [
+      {
+        "key": "initial",
+        "label": "Initial trait mean",
+        "type": "number"
+      },
+      {
+        "key": "selected",
+        "label": "Selected-parent mean",
+        "type": "number"
+      },
+      {
+        "key": "heritability",
+        "label": "Narrow-sense heritability h²",
+        "type": "number"
+      },
+      {
+        "key": "generations",
+        "label": "Generations with constant differential",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "drift",
+    "unit": 7,
+    "title": "Genetic drift, founders & bottlenecks",
+    "topics": "7.4",
+    "assumptions": "Neutral Wright–Fisher model with discrete nonoverlapping generations, no migration, selection or mutation. Founder/bottleneck changes the initial sampled allele pool once; subsequent generations use the entered N. Seed fixes reproducibility.",
+    "fields": [
+      {
+        "key": "p",
+        "label": "Initial allele frequency",
+        "type": "number"
+      },
+      {
+        "key": "population",
+        "label": "Diploid population size N",
+        "type": "number"
+      },
+      {
+        "key": "generations",
+        "label": "Generations",
+        "type": "number"
+      },
+      {
+        "key": "seed",
+        "label": "Random seed",
+        "type": "number"
+      },
+      {
+        "key": "event",
+        "label": "Initial sampling event",
+        "type": "select"
+      },
+      {
+        "key": "eventsize",
+        "label": "Diploid founder/bottleneck size",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "gene-flow",
+    "unit": 7,
+    "title": "Gene flow between populations",
+    "topics": "7.4",
+    "assumptions": "Equal-sized infinite populations with symmetric replacement migration, no selection or drift. Frequency changes are calculated simultaneously each generation.",
+    "fields": [
+      {
+        "key": "pa",
+        "label": "Population A initial p",
+        "type": "number"
+      },
+      {
+        "key": "pb",
+        "label": "Population B initial p",
+        "type": "number"
+      },
+      {
+        "key": "migration",
+        "label": "Symmetric migrant fraction",
+        "type": "number"
+      },
+      {
+        "key": "generations",
+        "label": "Generations",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "hardy",
+    "unit": 7,
+    "title": "Hardy–Weinberg equilibrium",
+    "topics": "7.5",
+    "assumptions": "Diploid biallelic locus. Frequency comparison is descriptive and does not identify a cause of departure. Allele frequency is estimated from the same sample; a formal HWE chi-square test therefore has one degree of freedom and can be unreliable with small expected counts.",
+    "fields": [
+      {
+        "key": "aa",
+        "label": "Observed AA",
+        "type": "number"
+      },
+      {
+        "key": "ah",
+        "label": "Observed Aa",
+        "type": "number"
+      },
+      {
+        "key": "rr",
+        "label": "Observed aa",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "sequence-evidence",
+    "unit": 7,
+    "title": "Evolutionary sequence evidence",
+    "topics": "7.6–7.7",
+    "assumptions": "Assumes a valid alignment of equal-length homologous sequences. p-distance is uncorrected for multiple substitutions and is not a phylogenetic reconstruction method. Similarity alone does not establish orthology or ancestral direction.",
+    "fields": [
+      {
+        "key": "a",
+        "label": "Sequence A",
+        "type": "text"
+      },
+      {
+        "key": "b",
+        "label": "Sequence B",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "phylogeny",
+    "unit": 7,
+    "title": "Phylogenetic-tree studio",
+    "topics": "7.9",
+    "assumptions": "Four-taxon rooted cladograms with no branch-length time or genetic-distance scale. Internal nodes represent inferred ancestors; none of the tip species is labeled as another tip’s ancestor.",
+    "fields": [
+      {
+        "key": "topology",
+        "label": "Rooted topology",
+        "type": "select"
+      },
+      {
+        "key": "rotate",
+        "label": "Rotate displayed tips",
+        "type": "select"
+      },
+      {
+        "key": "pair",
+        "label": "Pair to compare",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "speciation",
+    "unit": 7,
+    "title": "Isolation & divergence",
+    "topics": "7.10–7.11",
+    "assumptions": "Infinite two-population allele model: A favored in one population and a favored in the other with additive genotype fitness. Frequency divergence does not itself establish reproductive isolation or a new species.",
+    "fields": [
+      {
+        "key": "pa",
+        "label": "Population A initial p",
+        "type": "number"
+      },
+      {
+        "key": "pb",
+        "label": "Population B initial p",
+        "type": "number"
+      },
+      {
+        "key": "selection",
+        "label": "Opposing selection strength",
+        "type": "number"
+      },
+      {
+        "key": "migration",
+        "label": "Migrant fraction",
+        "type": "number"
+      },
+      {
+        "key": "generations",
+        "label": "Generations",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "origins",
+    "unit": 7,
+    "title": "Origins-of-life evidence",
+    "topics": "7.12",
+    "assumptions": "Curated reasoning activity, not a reconstruction of the origin of life. Experimental possibility does not prove that an exact laboratory condition or sequence occurred on early Earth.",
+    "fields": [
+      {
+        "key": "evidence",
+        "label": "Evidence scenario",
+        "type": "select"
+      }
+    ]
+  },
+  {
+    "id": "behavior",
+    "unit": 8,
+    "title": "Environmental responses: taxis & kinesis",
+    "topics": "8.1",
+    "assumptions": "One-dimensional bounded arena; cue increases left to right. Reflecting boundaries prevent escape. Taxis adds a positive directional bias; kinesis changes random step size. Output is an illustrative behavioral model, not fitted animal behavior.",
+    "fields": [
+      {
+        "key": "kind",
+        "label": "Behavior",
+        "type": "select"
+      },
+      {
+        "key": "agents",
+        "label": "Individuals",
+        "type": "number"
+      },
+      {
+        "key": "steps",
+        "label": "Movement steps",
+        "type": "number"
+      },
+      {
+        "key": "seed",
+        "label": "Random seed",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "energy-flow",
+    "unit": 8,
+    "title": "Trophic energy & productivity",
+    "topics": "8.2",
+    "assumptions": "Steady-state energy-accounting example. Constant transfer efficiency is an entered assumption, not a universal 10% rule. Producer respiration cannot exceed GPP in this nonnegative-NPP view. Biomass and numbers are not calculated directly from energy.",
+    "fields": [
+      {
+        "key": "gross",
+        "label": "Gross primary productivity (kJ/m²/day)",
+        "type": "number"
+      },
+      {
+        "key": "respiration",
+        "label": "Producer respiration (kJ/m²/day)",
+        "type": "number"
+      },
+      {
+        "key": "efficiency",
+        "label": "Transfer efficiency (%)",
+        "type": "number"
+      },
+      {
+        "key": "levels",
+        "label": "Trophic levels including producers",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "matter-cycle",
+    "unit": 8,
+    "title": "Carbon, nitrogen & phosphorus pools",
+    "topics": "8.2",
+    "assumptions": "Closed three-pool accounting model. Uptake applies to the chosen available chemical pool; nitrogen fixation, nitrification and phosphorus weathering are not resolved separately. Energy is not represented by this conserved pool.",
+    "fields": [
+      {
+        "key": "element",
+        "label": "Element",
+        "type": "select"
+      },
+      {
+        "key": "environment",
+        "label": "Environment pool (model mass)",
+        "type": "number"
+      },
+      {
+        "key": "producers",
+        "label": "Producer pool (model mass)",
+        "type": "number"
+      },
+      {
+        "key": "consumers",
+        "label": "Consumer pool (model mass)",
+        "type": "number"
+      },
+      {
+        "key": "uptake",
+        "label": "Uptake rate (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "feeding",
+        "label": "Consumption rate (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "return",
+        "label": "Return rate (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "population-accounting",
+    "unit": 8,
+    "title": "Population accounting & demography",
+    "topics": "8.3",
+    "assumptions": "Fixed counts per interval rather than per-capita rates. Negative projected population is truncated at zero; births and departures then no longer follow fixed biological assumptions, so interpretation should stop at extinction. Age structure is not modeled.",
+    "fields": [
+      {
+        "key": "initial",
+        "label": "Starting population",
+        "type": "number"
+      },
+      {
+        "key": "births",
+        "label": "Births per interval",
+        "type": "number"
+      },
+      {
+        "key": "deaths",
+        "label": "Deaths per interval",
+        "type": "number"
+      },
+      {
+        "key": "immigration",
+        "label": "Immigrants per interval",
+        "type": "number"
+      },
+      {
+        "key": "emigration",
+        "label": "Emigrants per interval",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Intervals",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "sampling",
+    "unit": 8,
+    "title": "Population sampling investigation",
+    "topics": "8.3",
+    "assumptions": "Mark–recapture assumes a closed population, retained marks, thorough mixing and equal capture probability. Quadrat inference assumes representative independent sampling and known habitat area. Outputs are point estimates; no confidence interval is asserted.",
+    "fields": [
+      {
+        "key": "method",
+        "label": "Sampling method",
+        "type": "select"
+      },
+      {
+        "key": "marked",
+        "label": "Initially marked M",
+        "type": "number"
+      },
+      {
+        "key": "capture",
+        "label": "Second sample C",
+        "type": "number"
+      },
+      {
+        "key": "recaptured",
+        "label": "Marked recaptures R",
+        "type": "number"
+      },
+      {
+        "key": "area",
+        "label": "Total habitat area (m²)",
+        "type": "number"
+      },
+      {
+        "key": "quadrat",
+        "label": "Area per quadrat (m²)",
+        "type": "number"
+      },
+      {
+        "key": "counts",
+        "label": "Quadrat counts",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "density-disturbance",
+    "unit": 8,
+    "title": "Density dependence & disturbance",
+    "topics": "8.4",
+    "assumptions": "Piecewise logistic dynamics with instantaneous disturbance. The event changes population and K independently; the chosen cause is not inferred. Recovery is impossible from exact zero without immigration.",
+    "fields": [
+      {
+        "key": "n0",
+        "label": "Initial population",
+        "type": "number"
+      },
+      {
+        "key": "k",
+        "label": "Initial carrying capacity",
+        "type": "number"
+      },
+      {
+        "key": "r",
+        "label": "Intrinsic rate (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "eventtime",
+        "label": "Disturbance time",
+        "type": "number"
+      },
+      {
+        "key": "loss",
+        "label": "Population loss (%)",
+        "type": "number"
+      },
+      {
+        "key": "newk",
+        "label": "Carrying capacity after event",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "competition",
+    "unit": 8,
+    "title": "Competition & coexistence",
+    "topics": "8.5",
+    "assumptions": "Lotka–Volterra competition model with fixed intrinsic rates 0.2 time⁻¹. Species are homogeneous; resource identity and spatial refuges are not explicit. Outcome depends on coefficients and starting state.",
+    "fields": [
+      {
+        "key": "a",
+        "label": "Species A initial population",
+        "type": "number"
+      },
+      {
+        "key": "b",
+        "label": "Species B initial population",
+        "type": "number"
+      },
+      {
+        "key": "ka",
+        "label": "Species A carrying capacity",
+        "type": "number"
+      },
+      {
+        "key": "kb",
+        "label": "Species B carrying capacity",
+        "type": "number"
+      },
+      {
+        "key": "ab",
+        "label": "Effect of B on A, αAB",
+        "type": "number"
+      },
+      {
+        "key": "ba",
+        "label": "Effect of A on B, αBA",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "foodweb",
+    "unit": 8,
+    "title": "Food webs & trophic cascades",
+    "topics": "8.5",
+    "assumptions": "Illustrative three-level chain: dP=.5P(1−P/300)−.02PH; dH=.005PH−.2H−.03HC; dC=.006HC−.1C. Parameters are examples, not a prediction for a named ecosystem. Removal is complete at t=0; no recolonization.",
+    "fields": [
+      {
+        "key": "producer",
+        "label": "Starting producers",
+        "type": "number"
+      },
+      {
+        "key": "herbivore",
+        "label": "Starting herbivores",
+        "type": "number"
+      },
+      {
+        "key": "predator",
+        "label": "Starting predators",
+        "type": "number"
+      },
+      {
+        "key": "remove",
+        "label": "Perturbation at start",
+        "type": "select"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "interactions",
+    "unit": 8,
+    "title": "Mutualism & parasitism",
+    "topics": "8.5",
+    "assumptions": "Illustrative bounded model, not a universal mutualism/parasitism law. Each species has baseline logistic growth .2N(1−N/100); interaction is ±sN(other/(50+other)). A is the host in parasitism.",
+    "fields": [
+      {
+        "key": "kind",
+        "label": "Interaction",
+        "type": "select"
+      },
+      {
+        "key": "strength",
+        "label": "Interaction strength",
+        "type": "number"
+      },
+      {
+        "key": "a",
+        "label": "Population A initial",
+        "type": "number"
+      },
+      {
+        "key": "b",
+        "label": "Population B initial",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "biodiversity",
+    "unit": 8,
+    "title": "Biodiversity: richness & evenness",
+    "topics": "8.6",
+    "assumptions": "Entered sample counts are treated as representative. Shannon and Simpson indices are college extensions and depend on sampling effort. High diversity does not automatically prove ecosystem resilience.",
+    "fields": [
+      {
+        "key": "counts",
+        "label": "Species abundances",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "disruptions",
+    "unit": 8,
+    "title": "Nutrient enrichment & oxygen",
+    "topics": "8.7",
+    "assumptions": "Illustrative three-state eutrophication model with nutrient recycling, biomass loss, and reaeration toward 8 mg/L. Rates are not calibrated to a lake. Oxygen demand is proportional to biomass, with saturation at low oxygen to prevent negative O₂. Does not model temperature, stratification or species-specific tolerance.",
+    "fields": [
+      {
+        "key": "nutrient",
+        "label": "Initial available nutrient",
+        "type": "number"
+      },
+      {
+        "key": "input",
+        "label": "Nutrient input / time",
+        "type": "number"
+      },
+      {
+        "key": "algae",
+        "label": "Initial algae biomass",
+        "type": "number"
+      },
+      {
+        "key": "oxygen",
+        "label": "Initial dissolved O₂ (mg/L)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "unit": 0,
+    "title": "Graphing & descriptive statistics",
+    "topics": "All units",
+    "assumptions": "Replicates must represent independent experimental units. Error bars are not automatic significance tests. No normality check or confidence interval is inferred. Rows are ordered by X for plotting; choose a numerical X only when appropriate.",
+    "fields": [
+      {
+        "key": "measurements",
+        "label": "X, replicate 1, replicate 2, …",
+        "type": "textarea"
+      },
+      {
+        "key": "bars",
+        "label": "Error bars",
+        "type": "select"
+      },
+      {
+        "key": "xlabel",
+        "label": "X-axis label",
+        "type": "text"
+      },
+      {
+        "key": "ylabel",
+        "label": "Y-axis label",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "chi-square",
+    "unit": 0,
+    "title": "Chi-square goodness of fit",
+    "topics": "5.3–5.4; science practice 5",
+    "assumptions": "Goodness-of-fit test with an externally specified expected ratio unless fitted parameters are entered. Independence and adequate expected counts are required. Uses 0.05 critical values for df 1–10. Fail to reject does not prove the null hypothesis. Small counts trigger a validity warning.",
+    "fields": [
+      {
+        "key": "observed",
+        "label": "Observed counts",
+        "type": "text"
+      },
+      {
+        "key": "ratios",
+        "label": "Expected ratio",
+        "type": "text"
+      },
+      {
+        "key": "estimated",
+        "label": "Parameters estimated from these data",
+        "type": "number"
+      },
+      {
+        "key": "null",
+        "label": "Null hypothesis",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "experiment",
+    "unit": 0,
+    "title": "Experimental design & simulated replicates",
+    "topics": "All units",
+    "assumptions": "Synthetic independent replicates generated with Box–Muller normal sampling. True means and SD are model inputs, not estimated causal facts. No hypothesis test or causal conclusion is automatically asserted. Seed supports reproducibility.",
+    "fields": [
+      {
+        "key": "control",
+        "label": "Control true mean",
+        "type": "number"
+      },
+      {
+        "key": "treatment",
+        "label": "Treatment true mean",
+        "type": "number"
+      },
+      {
+        "key": "sd",
+        "label": "Within-group SD",
+        "type": "number"
+      },
+      {
+        "key": "n",
+        "label": "Independent replicates per group",
+        "type": "number"
+      },
+      {
+        "key": "seed",
+        "label": "Random seed",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "pigments",
+    "unit": 3,
+    "title": "Pigment absorption & action spectra",
+    "topics": "3.4",
+    "assumptions": "Illustrative Gaussian absorption bands centered near common pigment peaks, not measured spectra. Composite action curve is a normalized weighted sum and excludes energy-transfer efficiency and leaf optical effects.",
+    "fields": [
+      {
+        "key": "a",
+        "label": "Relative chlorophyll a amount",
+        "type": "number"
+      },
+      {
+        "key": "b",
+        "label": "Relative chlorophyll b amount",
+        "type": "number"
+      },
+      {
+        "key": "carotenoid",
+        "label": "Relative carotenoid amount",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "primers",
+    "unit": 6,
+    "title": "PCR primer binding & target span",
+    "topics": "6.8",
+    "assumptions": "Exact-match teaching model without mismatch tolerance, melting temperature, secondary structure or off-target genome search. Primers must be at least 4 bases here; real primers are typically longer. Multiple inward-facing pairs are reported rather than arbitrarily choosing one.",
+    "fields": [
+      {
+        "key": "dna",
+        "label": "Template top strand, 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "forward",
+        "label": "Forward primer, 5′ → 3′",
+        "type": "text"
+      },
+      {
+        "key": "reverse",
+        "label": "Reverse primer, 5′ → 3′",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "circadian",
+    "unit": 8,
+    "title": "Circadian cues & entrainment",
+    "topics": "8.1",
+    "assumptions": "Illustrative oscillator with discrete daily phase correction toward the nearest environmental cycle. It does not model a molecular clock or a biological phase-response curve. The waveform is arbitrary relative activity.",
+    "fields": [
+      {
+        "key": "period",
+        "label": "Intrinsic period (hours)",
+        "type": "number"
+      },
+      {
+        "key": "phase",
+        "label": "Starting phase shift (hours)",
+        "type": "number"
+      },
+      {
+        "key": "cue",
+        "label": "Environmental cue",
+        "type": "select"
+      },
+      {
+        "key": "strength",
+        "label": "Daily phase-correction fraction",
+        "type": "number"
+      },
+      {
+        "key": "days",
+        "label": "Days",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "invasion",
+    "unit": 8,
+    "title": "Invasion & resource competition",
+    "topics": "8.7",
+    "assumptions": "Both species have K=100; resident r=.2 and introduced r=.25 time⁻¹. Coefficients are hypothetical; introduced species are not universally competitively superior. The model excludes enemies, facilitation and spatial heterogeneity.",
+    "fields": [
+      {
+        "key": "resident",
+        "label": "Starting resident population",
+        "type": "number"
+      },
+      {
+        "key": "introduced",
+        "label": "Introduced population",
+        "type": "number"
+      },
+      {
+        "key": "impact",
+        "label": "Invader effect on resident",
+        "type": "number"
+      },
+      {
+        "key": "resistance",
+        "label": "Resident effect on invader",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "habitat",
+    "unit": 8,
+    "title": "Habitat loss & patch connectivity",
+    "topics": "8.7",
+    "assumptions": "Levins-style college extension with homogeneous patches and mass-action colonization. Initial occupancy cannot exceed remaining habitat. Habitat loss is represented by h; connectivity is represented by c. Occupancy is not population abundance.",
+    "fields": [
+      {
+        "key": "occupied",
+        "label": "Initially occupied patches (fraction)",
+        "type": "number"
+      },
+      {
+        "key": "colonization",
+        "label": "Colonization coefficient (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "extinction",
+        "label": "Local extinction coefficient (time⁻¹)",
+        "type": "number"
+      },
+      {
+        "key": "available",
+        "label": "Habitat remaining (fraction)",
+        "type": "number"
+      },
+      {
+        "key": "time",
+        "label": "Time span",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "resilience",
+    "unit": 8,
+    "title": "Functional diversity & response",
+    "topics": "8.6–8.7",
+    "assumptions": "Illustrative functional-response accounting: equal initial contributions; diverse sensitivities range from 0.2 to 1, while identical sensitivity is 0.6. Remaining contribution = max(0,1−severity×sensitivity). This selected scenario does not establish a universal diversity–resilience law or simulate recovery.",
+    "fields": [
+      {
+        "key": "groups",
+        "label": "Functional response groups",
+        "type": "number"
+      },
+      {
+        "key": "disturbance",
+        "label": "Disturbance severity",
+        "type": "number"
+      },
+      {
+        "key": "variation",
+        "label": "Sensitivity pattern",
+        "type": "select"
+      }
+    ]
+  }
+]

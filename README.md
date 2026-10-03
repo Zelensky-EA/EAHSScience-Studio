@@ -1,86 +1,131 @@
-# EAHS Science Figure & Model Studio
+# EAHS Science — AP Biology Unit Edition
 
-A standalone, original science tool site for AP and introductory college instruction. Link to it from the EAHS Science Department website. All calculations happen in the browser; no account, server, paid API, analytics, or network-dependent library is required.
+Eight unit pages, an eight-card landing page, and a shared data/investigation page. The collection contains **82 tools**, including quantitative simulations, figure builders, qualitative mechanism models and evidence activities. College extensions and model limitations are identified in the notes.
 
-## Open it
+## Update the existing GitHub site
 
-Open `EAHS-Science-Studio.html` in a current Chrome, Edge, Firefox or Safari browser. This file contains the complete site, including styles and calculations. It works offline. Preset storage depends on browser permissions; sharing links is useful after hosting the site.
+1. Extract `EAHS-Science-Unit-Edition.zip` on your computer.
+2. Open the **Code** tab of `Zelensky-EA/EAHSScience-Studio`.
+3. Choose **Add file → Upload files**.
+4. Upload the extracted files and folders to the repository's main directory. Upload files, not the ZIP itself. Replace the existing `index.html`, `styles.css`, `models.js`, `app.js`, and `EAHS-Science-Studio.html` with the updated versions.
+5. Commit directly to `main`.
+6. Keep Pages configured as **Deploy from a branch → main → /(root)**. GitHub Pages will rebuild after the commit.
+7. Check the **Actions** deployment status, then open the site. If an older version appears, refresh while bypassing cache.
 
-For editing, use the separate `index.html`, `styles.css`, `models.js` and `app.js` files. Keep those four files together. There is no build step.
+The public address remains:
 
-## Host with GitHub Pages
+https://zelensky-ea.github.io/EAHSScience-Studio/
 
-1. Create a repository named `eahs-science-tools` on GitHub, or use an existing repository intended for this tool site.
-2. Upload `index.html`, `styles.css`, `models.js` and `app.js` at the repository root. Upload the supplied `.nojekyll` file as well if using git; the site uses ordinary files and does not need Jekyll.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose **main** and **/(root)**, then **Save**.
-6. Use the published address shown in Pages settings, normally `https://YOUR-USERNAME.github.io/eahs-science-tools/`.
-7. Add that address to the EAHS Science website as a button labeled **Science Figure & Model Studio**, opening in a new tab.
+The department website's existing link can continue to use that address.
 
-GitHub's current instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+GitHub documentation:
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-Alternative: upload the four site files to any static website host. You can also rename the single-file `EAHS-Science-Studio.html` to `index.html` and host just that file.
+For the site itself, the required files are `index.html`, `unit-1.html` through `unit-8.html`, `data-tools.html`, `styles.css`, `models.js`, `extra.js` and `app.js`. Everything uses relative paths compatible with a GitHub Pages project repository. No build step, backend, paid API or external JavaScript library is required.
 
-This package is ready for hosting but is not published to a live URL. It does not modify the existing EAHS Science site.
+## Offline copy
 
-## Add a link to the department site
+`EAHS-Science-Studio.html` is a self-contained copy of the entire unit collection. Open it in a current browser. Its unit navigation uses a page query parameter to load an embedded page. Browser presets and clipboard behavior depend on the browser's permissions. Hosted links are useful for sharing with others; local file links generally are not.
 
-Replace the example address with the real published address. If your site has an existing button class, use it in place of the inline style below.
+## Collection
 
-```html
-<a href="https://YOUR-USERNAME.github.io/eahs-science-tools/"
-   target="_blank" rel="noopener"
-   style="display:inline-block;padding:12px 18px;border-radius:8px;background:#234bb0;color:white;text-decoration:none;border-bottom:3px solid #b99a55;">
-  Science Figure &amp; Model Studio
-</a>
+| Page | Tools | Examples |
+| --- | ---: | --- |
+| Unit 1 — Chemistry of Life | 8 | Water, elements, polymers, carbohydrates, lipids, nucleic acids, proteins, pH |
+| Unit 2 — Cells | 10 | Trafficking, cell size, permeability, diffusion, water potential, tonicity, osmosis data, pumps, compartments, endosymbiosis |
+| Unit 3 — Cellular Energetics | 9 | Enzymes, activation energy, ATP coupling, photosystems, light response, respiration, fermentation, respirometry, pigments |
+| Unit 4 — Communication & Cell Cycle | 6 | Receptors, signaling, feedback, chromosome/DNA accounting, mitotic index, checkpoints |
+| Unit 5 — Heredity | 7 | Punnett squares, pedigrees, meiosis/nondisjunction, linkage, ABO/epistasis, polygenic traits, reaction norms |
+| Unit 6 — Gene Expression & Regulation | 11 | Gels, replication, transcription/processing, translation, operons, specialization, mutations, PCR, restriction digest, transformation, primer binding |
+| Unit 7 — Natural Selection | 10 | Selection, trait distributions, artificial selection, drift, gene flow, Hardy–Weinberg, sequence comparison, phylogeny, isolation, origins evidence |
+| Unit 8 — Ecology | 17 | Population growth, predators/prey, behavior, trophic energy, matter pools, population accounting, sampling, density/disturbance, competition, food webs, mutualism/parasitism, diversity, nutrient enrichment, circadian cues, invasion, habitat patches, functional response |
+| Shared data & investigations | 4 | Micropipettes, graphing with SD/SE, chi-square, synthetic replicate experiments |
+
+`model-catalog.json` contains the full tool inventory, topic mappings, field labels and assumptions. Some models connect multiple topics or units. Topic mapping refers to the current course organization; it is not a claim that every adjustable parameter is required AP content.
+
+## Common interactions
+
+- Select a tool within a unit, change inputs and generate an updated figure.
+- Figure Builder emphasizes output; Explore Model opens assumptions and a reasoning prompt.
+- Show/hide result tables and annotations. Certain figure-specific options also produce blank student versions. The results checkbox does not blank every quantitative figure or protect answers from students.
+- Download high-resolution PNG, editable SVG, or CSV when data is available.
+- Print the current figure without controls or page navigation.
+- Save named browser presets for each tool.
+- Copy a link containing the exact settings. Random models use entered seeds for reproducibility.
+- On small screens, figure panels scroll horizontally to preserve readable diagram labels.
+
+## Scientific scope
+
+Quantitative models state their equations and assumptions. Schematic mechanisms and evidence activities use qualitative comparisons instead of invented physical predictions.
+
+Examples of boundaries:
+
+- Water potential uses ideal solute potential plus entered pressure in MPa. It predicts initial direction rather than tissue mass change or transport rate. Osmosis mass-change analysis uses entered measurements.
+- Enzyme kinetics uses Michaelis–Menten steady-state assumptions. Temperature/pH responses are illustrative functions. It does not compute a real enzyme's kinetics from its name, nor irreversible unfolding from exposure time.
+- The photosynthesis electron-flow figure branches electron transfer and proton-driven ATP production. Its stoichiometric output is an assumed upper bound, not a measured light-response rate.
+- Protein interaction, membrane packing, endosymbiosis, checkpoint and origins tools are schematic reasoning models.
+- The pedigree structure is a fixed three-generation family; phenotypes are editable. Conditional probabilities depend on declared founder-genotype priors, not clinical population frequencies.
+- DNA/RNA conversion, standard-code translation, specified sequence mutations, primer exact-match positions and restriction fragments are sequence computations. They do not predict arbitrary protein function or primer melting temperature.
+- Quantitative ecological systems use explicit example parameters. They are not calibrated forecasts for a named ecosystem. Trophic pyramid widths are explicitly schematic; numerical labels carry the energy accounting.
+- The selection model is diploid. The resistance option is an allele-fitness teaching interpretation, not a clinical or bacterial treatment predictor.
+- Phenotype distributions, breeder's equation, Nernst potential, patch occupancy and diversity indices are labeled as extensions or explicitly assumed models.
+- SD/SE tools require independent replicates. Chi-square alerts on low expected counts and uses fixed 0.05 critical values for df 1–10. Failure to reject does not prove a null hypothesis.
+
+## Validation and limitations
+
+Completed:
+
+- JavaScript syntax checks.
+- Original seven-tool quantitative test suite.
+- `test-extended.cjs`: 82 default renderer checks, 82 grayscale/result-hidden variants, 679 individual parameter scenarios, and quantitative checks for water potential, base complementarity, translation, digest conservation, PCR doubling, neutral selection, chi-square and inhibitor behavior. Parameter combinations that violate explicit constraints return errors rather than invalid figures.
+- All 164 generated SVG variants parsed as XML. Every default figure rasterized and was visually inspected in unit montages. Visual review corrected branch topology in energy pathways and trophic-pyramid label visibility.
+- Local link, asset and control-ID checks across the landing page and nine workspaces.
+
+Full browser rendering and interactions could not be run in the build environment because no browser executable was available and downloading one was blocked. Before classroom deployment, check unit navigation, input changes, saved presets, share links, PNG download and printing in your browser. A Playwright smoke test is included for an environment with Chromium available. The checks are useful development checks, not proof that every possible multi-parameter combination has been validated.
+
+Run from this directory:
+
+```bash
+node test-models.cjs
+node test-extended.cjs
+python check-links.py
 ```
 
-## Tools and instructional scope
+Optional browser verification, with Playwright and Chromium installed:
 
-| Tool | Implemented capabilities |
-| --- | --- |
-| Punnett squares | One- and two-locus crosses, complete dominance, one-locus incomplete dominance and codominance, X-linked recessive crosses, genotype/phenotype probabilities and expected counts |
-| Pedigrees | Three-generation fixed family; editable affected/unaffected/unknown status; random Mendelian families; exhaustive compatibility checks for AR, AD, XLR, XLD and Y-linked inheritance; possible genotypes; conditional recessive-carrier probabilities |
-| Population growth | Analytic exponential and logistic solutions; positive or negative intrinsic growth; starting population and carrying capacity; population, total growth and per-capita growth plots |
-| Predator–prey | Classic Lotka–Volterra and logistic-prey extension; adjustable rates; time series and phase plane; positive coexistence equilibrium; 12,000-step fourth-order Runge–Kutta integration |
-| Gel electrophoresis | DNA ladders and up to six sample lanes; 100–10,000 bp linear DNA fragments; schematic log-size migration; unresolved-band merging and optional size labels |
-| Micropipettes | Conventional P20/P200/P1000 three-digit readings; valid ranges and increments; µL/mL conversion; reading practice; entered-replicate mean, sample SD, CV and signed bias |
-| pH | Direct pH, strong monoprotic acid, weak monoprotic acid equilibrium including water autoionization, Henderson–Hasselbalch buffer ratios, digital display and illustrative pH paper |
+```bash
+python -m http.server 8765
+# In a second terminal:
+node browser-check.cjs
+```
 
-The interface includes Figure Builder and Explore Model views, equations, assumptions, reasoning prompts, PNG/SVG export, CSV data, figure-only printing, black-and-white figures, browser presets, and share links that encode current settings.
+To regenerate the HTML pages and offline edition after editing source:
 
-The answer toggle hides result tables and answer annotations. It is a worksheet convenience, not an access-control mechanism: data exports and the local source contain computed answers. Micropipette practice remains available when answers are hidden.
+```bash
+python build-pages.py
+```
 
-## Scientific boundaries
+Generated QA images are not needed for hosting and are omitted from the package. Tests create their own `qa-figures` folder.
 
-These models support reasoning at AP/introductory college level; they are not comprehensive physical or clinical simulators.
+## References
 
-- Pedigree structure is fixed in this version. Status is editable; relationships, sex and generation count are not. The solver assumes one fully penetrant locus, unrelated founders and no new mutation. It can report multiple compatible modes. Equal founder-genotype priors are teaching assumptions, not population-frequency or clinical estimates.
-- Two-locus Punnett squares assume independent assortment. Linkage, epistasis, selection and unequal viability are outside this version.
-- Ecology plots are deterministic continuous-time model outputs. They do not represent real field datasets. Time units are arbitrary but must be consistent with entered rates.
-- Gel migration is schematic. It does not predict actual migration from agarose percentage, voltage, running time or conformation. The default undigested sample represents linear DNA, not a circular plasmid. Fragment sizes are entered manually rather than calculated from a DNA sequence or enzyme recognition sites.
-- Pipette hardware varies; verify the display and range on your own instruments. Statistical metrics describe the entered measurements and do not certify calibration.
-- pH assumes ideal dilute water at 25 °C. The buffer equation is an approximation and does not model titration or buffer capacity. Paper colors are illustrative.
+Course organization and topic mappings:
+https://apcentral.collegeboard.org/media/pdf/ap-biology-course-and-exam-description.pdf
+https://apcentral.collegeboard.org/media/pdf/ap-biology-course-at-a-glance.pdf
 
-## Validation
+OpenStax Biology 2e:
+https://openstax.org/books/biology-2e
 
-Run `node test-models.cjs` to check genetic probabilities, recessive carrier inference, inheritance exclusions, valid random families, analytic population solutions, predator–prey equilibria and numerical convergence, pipette display/range behavior, measurement statistics, pH equilibria and gel migration direction.
+OpenStax Chemistry 2e:
+https://openstax.org/books/chemistry-2e
 
-Run `node test-renderers.cjs` to generate the seven default SVG figures and ten advanced or blank variants. The resulting `qa-figures` directory is for local review.
+Jeffrey R. Chasnov, HKUST, Mathematical Biology:
+https://www.math.ust.hk/~machas/mathematical-biology.pdf
 
-Completed checks: JavaScript syntax; the model test suite; all 17 renderer scenarios; XML parsing and SVG rasterization; visual inspection of the rendered figure set. Visual review identified and corrected an overly rounded small-volume unit conversion.
+NHGRI, electrophoresis:
+https://www.genome.gov/genetics-glossary/Electrophoresis
 
-Full browser interaction, mobile layout, PNG downloading, print layout, and clipboard behavior could not be verified in the build environment: no browser executable was installed and browser downloads were blocked. Check those features in your browser before classroom deployment. A Playwright smoke-check script is included for environments with Node, Playwright and Chromium installed: start `python -m http.server 8765` in this folder, then run `node browser-check.cjs` from a second terminal. Scripts are development checks and are not needed for hosting.
+Gilson, PIPETMAN user guide:
+https://www.gilson.com/pub/media/docs/PIPETMAN_USER_GUIDE_LT801122-I.pdf
 
-## Scientific references
-
-- OpenStax Biology 2e, environmental limits to growth: https://openstax.org/books/biology-2e/pages/45-3-environmental-limits-to-population-growth
-- OpenStax Biology 2e, inheritance: https://openstax.org/books/biology-2e/pages/12-2-characteristics-and-traits
-- Jeffrey R. Chasnov, *Mathematical Biology*, HKUST, sections 1.2 and 1.4: https://www.math.ust.hk/~machas/mathematical-biology.pdf
-- NHGRI, electrophoresis: https://www.genome.gov/genetics-glossary/Electrophoresis
-- Gilson, PIPETMAN user guide: https://www.gilson.com/pub/media/docs/PIPETMAN_USER_GUIDE_LT801122-I.pdf
-- OpenStax Chemistry 2e, acid–base equilibrium: https://openstax.org/books/chemistry-2e/pages/14-3-relative-strengths-of-acids-and-bases
-- OpenStax Chemistry 2e, buffers: https://openstax.org/books/chemistry-2e/pages/14-6-buffers
-
-Original implementation created for EAHS Science. Reference-site code, branding and artwork were not copied. AP is a College Board trademark; the resource is independent and is not endorsed by the College Board.
+Original implementation for EAHS Science. Reference-site source code and artwork were not copied. AP is a College Board trademark; this independent resource is not endorsed by College Board.
