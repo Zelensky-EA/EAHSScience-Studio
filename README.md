@@ -2,37 +2,6 @@
 
 A standalone, original science tool site for AP and introductory college instruction. Link to it from the EAHS Science Department website. All calculations happen in the browser; no account, server, paid API, analytics, or network-dependent library is required.
 
-## Open it
-
-Open `EAHS-Science-Studio.html` in a current Chrome, Edge, Firefox or Safari browser. This file contains the complete site, including styles and calculations. It works offline. Preset storage depends on browser permissions; sharing links is useful after hosting the site.
-
-For editing, use the separate `index.html`, `styles.css`, `models.js` and `app.js` files. Keep those four files together. There is no build step.
-
-## Host with GitHub Pages
-
-1. Create a repository named `eahs-science-tools` on GitHub, or use an existing repository intended for this tool site.
-2. Upload `index.html`, `styles.css`, `models.js` and `app.js` at the repository root. Upload the supplied `.nojekyll` file as well if using git; the site uses ordinary files and does not need Jekyll.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose **main** and **/(root)**, then **Save**.
-6. Use the published address shown in Pages settings, normally `https://YOUR-USERNAME.github.io/eahs-science-tools/`.
-7. Add that address to the EAHS Science website as a button labeled **Science Figure & Model Studio**, opening in a new tab.
-
-GitHub's current instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-
-Alternative: upload the four site files to any static website host. You can also rename the single-file `EAHS-Science-Studio.html` to `index.html` and host just that file.
-
-This package is ready for hosting but is not published to a live URL. It does not modify the existing EAHS Science site.
-
-## Add a link to the department site
-
-Replace the example address with the real published address. If your site has an existing button class, use it in place of the inline style below.
-
-```html
-<a href="https://YOUR-USERNAME.github.io/eahs-science-tools/"
-   target="_blank" rel="noopener"
-   style="display:inline-block;padding:12px 18px;border-radius:8px;background:#234bb0;color:white;text-decoration:none;border-bottom:3px solid #b99a55;">
-  Science Figure &amp; Model Studio
 </a>
 ```
 
