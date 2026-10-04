@@ -1,0 +1,1828 @@
+{
+  "title": "Anatomy & Physiology",
+  "domain": "anatomy",
+  "units": [
+    "Foundations, Cells & Tissues",
+    "Integumentary System",
+    "Skeletal System",
+    "Muscular System",
+    "Nervous System",
+    "Special Senses",
+    "Endocrine System",
+    "Cardiovascular System",
+    "Blood",
+    "Lymphatic & Immune Systems",
+    "Respiratory System",
+    "Digestive System",
+    "Urinary System & Fluid Balance",
+    "Reproduction & Development"
+  ],
+  "source": "https://openstax.org/details/books/anatomy-and-physiology-2e",
+  "activities": [
+    {
+      "id": "homeostasis",
+      "title": "Homeostasis & negative feedback",
+      "unit": 1,
+      "description": "Explore a regulated variable responding to a constant disturbance.",
+      "equation": "dX/dt = gain(set\u2212X)+disturbance",
+      "limits": "Linear single-variable feedback model; real regulation involves delays, saturation and multiple signals. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a persistent disturbance can leave an offset from the set point.",
+      "fields": [
+        {
+          "key": "set",
+          "label": "Set point (relative units)",
+          "value": 10,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "initial",
+          "label": "Starting value",
+          "value": 5,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "gain",
+          "label": "Feedback rate (1/time)",
+          "value": 0.5,
+          "min": 0.05,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "disturbance",
+          "label": "Constant disturbance (units/time)",
+          "value": 1,
+          "min": -3,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Evaluation time",
+          "value": 5,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "tissues",
+      "title": "Tissues: structure & function",
+      "unit": 1,
+      "description": "Compare major tissue classes and their characteristic organization.",
+      "equation": "Organization of cells and extracellular material supports tissue function.",
+      "limits": "A conceptual arrangement, not a histology image or classification algorithm. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain one structure\u2013function relationship without using a cell-city analogy.",
+      "fields": [
+        {
+          "key": "tissue",
+          "label": "Tissue class",
+          "value": "epithelial",
+          "options": [
+            [
+              "epithelial",
+              "epithelial"
+            ],
+            [
+              "connective",
+              "connective"
+            ],
+            [
+              "muscle",
+              "muscle"
+            ],
+            [
+              "nervous",
+              "nervous"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "layers",
+          "label": "Schematic repeated elements",
+          "value": 5,
+          "min": 3,
+          "max": 10,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "cell-exchange",
+      "title": "Cell geometry & exchange",
+      "unit": 1,
+      "description": "Relate cell radius to membrane area and cellular volume.",
+      "equation": "Sphere surface area/volume = 3/r",
+      "limits": "Ideal spherical cell without folds; exchange also depends on transport proteins, gradients and metabolism. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why small size can help exchange without imposing one universal size limit.",
+      "fields": [
+        {
+          "key": "r",
+          "label": "Cell radius (\u00b5m)",
+          "value": 10,
+          "min": 0.5,
+          "max": 40,
+          "step": 0.5,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "skin",
+      "title": "Skin layers & injury depth",
+      "unit": 2,
+      "description": "Inspect a layered schematic and identify which tissues a selected depth reaches.",
+      "equation": "Epidermis is epithelial; dermis is connective tissue; hypodermis lies below the skin proper.",
+      "limits": "Layer thicknesses and structures are schematic, not a prediction of wound severity. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why dermal injury can involve blood vessels whereas the epidermis is avascular.",
+      "fields": [
+        {
+          "key": "depth",
+          "label": "Selected depth",
+          "value": "epidermis",
+          "options": [
+            [
+              "epidermis",
+              "epidermis"
+            ],
+            [
+              "dermis",
+              "dermis"
+            ],
+            [
+              "hypodermis",
+              "hypodermis"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "heat-transfer",
+      "title": "Heat transfer & cooling",
+      "unit": 2,
+      "description": "Compare passive heat loss with a simplified cooling curve.",
+      "equation": "T(t)=Tambient+(Tinitial\u2212Tambient)e^(\u2212kt)",
+      "limits": "Passive object/surface model; not a whole-body thermoregulation or core-temperature prediction. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain the role of temperature difference in passive heat transfer.",
+      "fields": [
+        {
+          "key": "initial",
+          "label": "Initial surface temperature (\u00b0C)",
+          "value": 35,
+          "min": 25,
+          "max": 40,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ambient",
+          "label": "Ambient temperature (\u00b0C)",
+          "value": 20,
+          "min": 0,
+          "max": 35,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Cooling coefficient (1/min)",
+          "value": 0.1,
+          "min": 0.01,
+          "max": 0.5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Elapsed time (min)",
+          "value": 5,
+          "min": 0,
+          "max": 30,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "wound",
+      "title": "Repair stages & overlapping processes",
+      "unit": 2,
+      "description": "Explore dominant processes in a schematic wound-repair sequence.",
+      "equation": "Hemostasis, inflammation, proliferation and remodeling overlap in time.",
+      "limits": "Stage selection is conceptual; healing does not follow a universal fixed timetable. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Connect a repair process to its cellular participants.",
+      "fields": [
+        {
+          "key": "stage",
+          "label": "Focus stage",
+          "value": "inflammation",
+          "options": [
+            [
+              "hemostasis",
+              "hemostasis"
+            ],
+            [
+              "inflammation",
+              "inflammation"
+            ],
+            [
+              "proliferation",
+              "proliferation"
+            ],
+            [
+              "remodeling",
+              "remodeling"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "bone-remodel",
+      "title": "Bone remodeling balance",
+      "unit": 3,
+      "description": "Compare formation and resorption in a relative bone-mass bookkeeping model.",
+      "equation": "Net mass change = (formation\u2212resorption)\u00d7time",
+      "limits": "Fixed rates and relative units; no prediction of fracture risk, mineral density or clinical treatment. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Connect osteoblast and osteoclast activity to net structural change.",
+      "fields": [
+        {
+          "key": "initial",
+          "label": "Initial relative bone mass",
+          "value": 100,
+          "min": 20,
+          "max": 200,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "form",
+          "label": "Formation (units/month)",
+          "value": 2,
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "resorb",
+          "label": "Resorption (units/month)",
+          "value": 1.5,
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Elapsed months",
+          "value": 12,
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "fractures",
+      "title": "Fracture patterns & structure",
+      "unit": 3,
+      "description": "Compare illustrative transverse, oblique, spiral and comminuted patterns.",
+      "equation": "Pattern describes the break geometry; open/closed status describes communication with the exterior.",
+      "limits": "Stylized long-bone sketches, not radiographs or a diagnosis. Pattern does not determine every injury mechanism. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Distinguish pattern, location and open/closed status.",
+      "fields": [
+        {
+          "key": "pattern",
+          "label": "Pattern",
+          "value": "transverse",
+          "options": [
+            [
+              "transverse",
+              "transverse"
+            ],
+            [
+              "oblique",
+              "oblique"
+            ],
+            [
+              "spiral",
+              "spiral"
+            ],
+            [
+              "comminuted",
+              "comminuted"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "levers",
+      "title": "Skeletal levers & torque",
+      "unit": 3,
+      "description": "Calculate muscle force needed to balance a load about a joint.",
+      "equation": "Fmuscle dmuscle = Fload dload",
+      "limits": "Static planar torque balance; limb weight, changing angle and co-contraction are omitted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a short muscle moment arm can require a large force.",
+      "fields": [
+        {
+          "key": "load",
+          "label": "Load force (N)",
+          "value": 20,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "loadarm",
+          "label": "Load moment arm (cm)",
+          "value": 30,
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "musclearm",
+          "label": "Muscle moment arm (cm)",
+          "value": 5,
+          "min": 0.5,
+          "max": 15,
+          "step": 0.5,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "sarcomere",
+      "title": "Sarcomere overlap & active tension",
+      "unit": 4,
+      "description": "Change length and distinguish overlap from filament shortening.",
+      "equation": "Active tension depends on actin\u2013myosin overlap; filaments slide without shortening.",
+      "limits": "Illustrative piecewise length\u2013tension curve; not measured muscle data. Passive tension is omitted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain what changes in the I band, H zone and filament lengths during shortening.",
+      "fields": [
+        {
+          "key": "length",
+          "label": "Sarcomere length (\u00b5m)",
+          "value": 2.2,
+          "min": 1.2,
+          "max": 4,
+          "step": 0.05,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "recruitment",
+      "title": "Motor-unit recruitment & force",
+      "unit": 4,
+      "description": "Compare recruited units with force output under equal-unit assumptions.",
+      "equation": "Total force = unit count \u00d7 recruited fraction \u00d7 unit force \u00d7 retained fraction",
+      "limits": "Equal independent motor units and linear addition; real motor units differ and recruitment order is not simulated. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Distinguish motor-unit recruitment from increasing firing frequency.",
+      "fields": [
+        {
+          "key": "units",
+          "label": "Available motor units",
+          "value": 20,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "fraction",
+          "label": "Recruited fraction (%)",
+          "value": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "force",
+          "label": "Force per unit (N)",
+          "value": 2,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "fatigue",
+          "label": "Retained force fraction",
+          "value": 1,
+          "min": 0.1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "twitches",
+      "title": "Twitch summation",
+      "unit": 4,
+      "description": "Compare overlapping force pulses after repeated stimuli.",
+      "equation": "Illustrative twitch pulse \u221d (t/\u03c4)e^(1\u2212t/\u03c4)",
+      "limits": "Linear pulse superposition, without a physiological force ceiling; not a calibrated tetanus or calcium model. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a second stimulus can add force before complete relaxation.",
+      "fields": [
+        {
+          "key": "interval",
+          "label": "Stimulus interval (ms)",
+          "value": 100,
+          "min": 20,
+          "max": 200,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "count",
+          "label": "Stimuli",
+          "value": 4,
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "tau",
+          "label": "Pulse time scale (ms)",
+          "value": 40,
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "action-potential",
+      "title": "Action potential & threshold",
+      "unit": 5,
+      "description": "Trigger an illustrative all-or-none waveform while separating stimulus size from spike amplitude.",
+      "equation": "In this example, reaching \u221255 mV triggers a fixed-shape spike.",
+      "limits": "Schematic waveform and fixed threshold, not Hodgkin\u2013Huxley channel kinetics. Neuronal thresholds vary. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a stronger suprathreshold stimulus does not simply create a taller action potential.",
+      "fields": [
+        {
+          "key": "rest",
+          "label": "Resting potential (mV)",
+          "value": -70,
+          "min": -80,
+          "max": -55,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "depolarization",
+          "label": "Stimulus depolarization (mV)",
+          "value": 20,
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "synaptic",
+      "title": "Synaptic integration",
+      "unit": 5,
+      "description": "Add simplified excitatory and inhibitory effects before threshold comparison.",
+      "equation": "Toy sum V=Vrest+EPSP\u2212IPSP; threshold=\u221255 mV",
+      "limits": "Linear voltage sum at one moment. Real synapses involve conductances, reversal potentials, timing and spatial attenuation. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how excitatory and inhibitory inputs can affect whether threshold is reached.",
+      "fields": [
+        {
+          "key": "rest",
+          "label": "Starting potential (mV)",
+          "value": -70,
+          "min": -80,
+          "max": -60,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "epsp",
+          "label": "Total depolarizing effect (mV)",
+          "value": 20,
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ipsp",
+          "label": "Total hyperpolarizing effect (mV)",
+          "value": 5,
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "reflex",
+      "title": "Reflex arc & lesions",
+      "unit": 5,
+      "description": "Trace a sensory-to-motor pathway and explore a blocked link.",
+      "equation": "Receptor \u2192 sensory neuron \u2192 CNS integration \u2192 motor neuron \u2192 effector",
+      "limits": "Generic reflex arc; some reflexes have additional interneurons and modulation. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Predict where information fails to reach the next component after a lesion.",
+      "fields": [
+        {
+          "key": "block",
+          "label": "Pathway condition",
+          "value": "none",
+          "options": [
+            [
+              "none",
+              "none"
+            ],
+            [
+              "sensory",
+              "sensory"
+            ],
+            [
+              "integration",
+              "integration"
+            ],
+            [
+              "motor",
+              "motor"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "vision",
+      "title": "Thin lens & image formation",
+      "unit": 6,
+      "description": "Relate object distance to focal length and image distance.",
+      "equation": "1/f = 1/do + 1/di",
+      "limits": "Single thin converging lens in air; the eye is a multi-surface optical system with accommodation. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why near objects require a change in focusing power for a fixed retinal distance.",
+      "fields": [
+        {
+          "key": "f",
+          "label": "Model focal length (cm)",
+          "value": 2,
+          "min": 0.5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "object",
+          "label": "Object distance (cm)",
+          "value": 20,
+          "min": 6,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "hearing",
+      "title": "Sound intensity & decibels",
+      "unit": 6,
+      "description": "Connect a logarithmic sound level to an intensity ratio.",
+      "equation": "\u0394\u03b2=10log\u2081\u2080(I\u2082/I\u2081)",
+      "limits": "Intensity ratio, not a direct perceived-loudness scale; frequency response and hearing physiology are omitted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a 20 dB difference is not twice the intensity of a 10 dB difference.",
+      "fields": [
+        {
+          "key": "db",
+          "label": "Level change (dB)",
+          "value": 20,
+          "min": -20,
+          "max": 60,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "adaptation",
+      "title": "Sensory adaptation",
+      "unit": 6,
+      "description": "Compare a transient response with a sustained response to a constant stimulus.",
+      "equation": "Response=baseline+(initial\u2212baseline)e^(\u2212t/\u03c4)",
+      "limits": "Empirical exponential teaching response, not a particular receptor\u2019s measured firing rate. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why adaptation does not mean all receptors always become silent.",
+      "fields": [
+        {
+          "key": "initial",
+          "label": "Initial relative response",
+          "value": 10,
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "baseline",
+          "label": "Sustained response",
+          "value": 2,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "tau",
+          "label": "Adaptation time constant (s)",
+          "value": 5,
+          "min": 0.5,
+          "max": 20,
+          "step": 0.5,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Time after onset (s)",
+          "value": 10,
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "hormone-binding",
+      "title": "Hormone receptors & occupancy",
+      "unit": 7,
+      "description": "Distinguish circulating concentration, receptor occupancy and biological response.",
+      "equation": "Fraction occupied = L/(Kd+L)",
+      "limits": "Independent identical receptors at equilibrium. Downstream amplification and regulation are not calculated. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how receptor abundance or affinity can change sensitivity.",
+      "fields": [
+        {
+          "key": "ligand",
+          "label": "Hormone concentration (relative units)",
+          "value": 2,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "kd",
+          "label": "Dissociation constant (same units)",
+          "value": 2,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "endocrine-axis",
+      "title": "Hypothalamic\u2013pituitary\u2013target feedback",
+      "unit": 7,
+      "description": "Trace an endocrine axis and distinguish target hormones from upstream signals.",
+      "equation": "Target-gland hormones can inhibit hypothalamic and pituitary secretion.",
+      "limits": "Qualitative axis with intact negative feedback; actual concentrations, pulsatility and disorders are not predicted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how a target-gland change can alter upstream signals.",
+      "fields": [
+        {
+          "key": "change",
+          "label": "Target-gland hormone signal",
+          "value": "normal",
+          "options": [
+            [
+              "low",
+              "low"
+            ],
+            [
+              "normal",
+              "normal"
+            ],
+            [
+              "high",
+              "high"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "clearance-hormone",
+      "title": "Hormone removal & half-life",
+      "unit": 7,
+      "description": "Explore exponential clearance after an isolated hormone input.",
+      "equation": "C=C\u20802^(\u2212t/half-life)",
+      "limits": "First-order clearance without additional secretion; distribution and receptor-mediated effects are omitted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a half-life removes a fraction rather than a fixed amount.",
+      "fields": [
+        {
+          "key": "initial",
+          "label": "Initial concentration (relative units)",
+          "value": 10,
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "half",
+          "label": "Half-life (min)",
+          "value": 5,
+          "min": 0.5,
+          "max": 20,
+          "step": 0.5,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Elapsed time (min)",
+          "value": 10,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "cardiac-output",
+      "title": "Cardiac output",
+      "unit": 8,
+      "description": "Connect heart rate and stroke volume to flow per minute.",
+      "equation": "CO=HR\u00d7SV",
+      "limits": "Independent entered HR and SV; actual filling, contractility and regulation couple these variables. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why raising heart rate does not guarantee unlimited cardiac output.",
+      "fields": [
+        {
+          "key": "hr",
+          "label": "Heart rate (beats/min)",
+          "value": 70,
+          "min": 40,
+          "max": 180,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "sv",
+          "label": "Stroke volume (mL/beat)",
+          "value": 70,
+          "min": 20,
+          "max": 150,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "resistance",
+      "title": "Vessel radius & flow resistance",
+      "unit": 8,
+      "description": "Compare radius changes in a Poiseuille-style vessel model.",
+      "equation": "Resistance ratio=1/radius-ratio\u2074; flow ratio=pressure-ratio\u00d7radius-ratio\u2074",
+      "limits": "Rigid straight cylindrical tube, constant viscosity and laminar steady flow; circulation is branching, pulsatile and compliant. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why a small radius change can strongly affect resistance.",
+      "fields": [
+        {
+          "key": "ratio",
+          "label": "New/reference radius ratio",
+          "value": 0.8,
+          "min": 0.3,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "pressure",
+          "label": "Pressure difference ratio",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ventricular",
+      "title": "Ventricular volumes & ejection fraction",
+      "unit": 8,
+      "description": "Distinguish end-diastolic volume, end-systolic volume and stroke volume.",
+      "equation": "SV=EDV\u2212ESV; EF=SV/EDV\u00d7100%",
+      "limits": "Volume accounting with a schematic cycle; EF alone does not establish function or a diagnosis. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain the relationship between stroke volume and ejection fraction.",
+      "fields": [
+        {
+          "key": "edv",
+          "label": "End-diastolic volume (mL)",
+          "value": 120,
+          "min": 50,
+          "max": 200,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "esv",
+          "label": "End-systolic volume (mL)",
+          "value": 50,
+          "min": 10,
+          "max": 150,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "oxygen-binding",
+      "title": "Hemoglobin oxygen binding",
+      "unit": 9,
+      "description": "Explore a Hill-shaped oxygen-dissociation curve and a P50 shift.",
+      "equation": "Fraction saturated=P\u207f/(P50\u207f+P\u207f)",
+      "limits": "Empirical binding model; real temperature, pH, CO\u2082 and 2,3-BPG effects are represented only indirectly by P50. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how a right shift affects saturation at a fixed partial pressure.",
+      "fields": [
+        {
+          "key": "p",
+          "label": "O\u2082 partial pressure (mmHg)",
+          "value": 60,
+          "min": 1,
+          "max": 120,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "p50",
+          "label": "P50 (mmHg)",
+          "value": 26,
+          "min": 15,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "hill",
+          "label": "Hill coefficient",
+          "value": 2.7,
+          "min": 1,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "abo",
+      "title": "ABO antigens & red-cell compatibility",
+      "unit": 9,
+      "description": "Compare a red-cell donor antigen set with recipient ABO antibodies.",
+      "equation": "Donor red-cell antigens must not be targeted by recipient ABO antibodies.",
+      "limits": "ABO red-cell teaching logic only; Rh, other antigens, plasma compatibility and laboratory crossmatching are omitted. Not transfusion guidance. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why compatibility depends on which component is transferred.",
+      "fields": [
+        {
+          "key": "donor",
+          "label": "Donor ABO type",
+          "value": "O",
+          "options": [
+            [
+              "O",
+              "O"
+            ],
+            [
+              "A",
+              "A"
+            ],
+            [
+              "B",
+              "B"
+            ],
+            [
+              "AB",
+              "AB"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "recipient",
+          "label": "Recipient ABO type",
+          "value": "A",
+          "options": [
+            [
+              "O",
+              "O"
+            ],
+            [
+              "A",
+              "A"
+            ],
+            [
+              "B",
+              "B"
+            ],
+            [
+              "AB",
+              "AB"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "hematocrit",
+      "title": "Blood composition & hematocrit",
+      "unit": 9,
+      "description": "Separate red-cell volume fraction from total blood volume.",
+      "equation": "Red-cell volume = hematocrit fraction \u00d7 sample volume",
+      "limits": "Simple packed-volume accounting; buffy coat and plasma contributions are combined in the remainder. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why hematocrit and hemoglobin concentration are related but different quantities.",
+      "fields": [
+        {
+          "key": "volume",
+          "label": "Total sample volume (mL)",
+          "value": 10,
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "fraction",
+          "label": "Hematocrit (%)",
+          "value": 45,
+          "min": 10,
+          "max": 65,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "filtration",
+      "title": "Capillary fluid exchange",
+      "unit": 10,
+      "description": "Explore a simplified classic Starling pressure balance.",
+      "equation": "Toy net pressure=(Pc\u2212Pi)\u2212(\u03c0c\u2212\u03c0i)",
+      "limits": "Classic simplified balance. Modern microvascular exchange includes endothelial glycocalyx and lymphatic return; this is not a full tissue-fluid model. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how hydrostatic and oncotic forces differ.",
+      "fields": [
+        {
+          "key": "pc",
+          "label": "Capillary hydrostatic pressure (mmHg)",
+          "value": 25,
+          "min": 5,
+          "max": 50,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "pi",
+          "label": "Interstitial hydrostatic pressure (mmHg)",
+          "value": 0,
+          "min": -5,
+          "max": 10,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "onc",
+          "label": "Plasma oncotic pressure (mmHg)",
+          "value": 25,
+          "min": 10,
+          "max": 35,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "oni",
+          "label": "Interstitial oncotic pressure (mmHg)",
+          "value": 5,
+          "min": 0,
+          "max": 15,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "immune-memory",
+      "title": "Primary & secondary immune responses",
+      "unit": 10,
+      "description": "Compare schematic antigen-specific responses with and without memory.",
+      "equation": "Memory can reduce response delay and increase antigen-specific response.",
+      "limits": "Illustrative dimensionless curves, not antibody titers or protection predictions. Real immunity depends on pathogen and host. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Connect memory cells to a changed response while avoiding the claim of guaranteed immunity.",
+      "fields": [
+        {
+          "key": "exposure",
+          "label": "Exposure",
+          "value": "primary",
+          "options": [
+            [
+              "primary",
+              "primary"
+            ],
+            [
+              "secondary",
+              "secondary"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "day",
+          "label": "Day after exposure",
+          "value": 7,
+          "min": 0,
+          "max": 25,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "immune-pathway",
+      "title": "Innate & adaptive cooperation",
+      "unit": 10,
+      "description": "Trace antigen handling and examine the function of a selected immune-cell role.",
+      "equation": "Antigen presentation and signaling coordinate cellular and humoral responses.",
+      "limits": "Selected canonical roles; real cells have additional functions and pathways. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Distinguish antibody production from killing an infected cell.",
+      "fields": [
+        {
+          "key": "role",
+          "label": "Selected role",
+          "value": "helper",
+          "options": [
+            [
+              "phagocyte",
+              "phagocyte"
+            ],
+            [
+              "helper",
+              "helper"
+            ],
+            [
+              "b-cell",
+              "b-cell"
+            ],
+            [
+              "cytotoxic",
+              "cytotoxic"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "ventilation",
+      "title": "Minute & alveolar ventilation",
+      "unit": 11,
+      "description": "Separate total airflow from airflow reaching exchange regions.",
+      "equation": "Minute ventilation=TV\u00d7rate; alveolar=(TV\u2212dead space)\u00d7rate",
+      "limits": "Constant entered volumes; anatomical and physiological dead space can differ. No clinical adequacy is inferred. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why rapid shallow breathing can give different alveolar ventilation from deep slower breathing.",
+      "fields": [
+        {
+          "key": "tv",
+          "label": "Tidal volume (mL/breath)",
+          "value": 500,
+          "min": 200,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dead",
+          "label": "Dead-space volume (mL/breath)",
+          "value": 150,
+          "min": 50,
+          "max": 300,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "rate",
+          "label": "Breathing rate (breaths/min)",
+          "value": 12,
+          "min": 5,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "lung-volumes",
+      "title": "Lung volumes & capacities",
+      "unit": 11,
+      "description": "Compose capacities from component volumes and distinguish residual volume.",
+      "equation": "VC=TV+IRV+ERV; TLC=VC+RV",
+      "limits": "Entered illustrative volumes. Simple spirometry does not directly measure residual volume. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why vital capacity does not equal total lung capacity.",
+      "fields": [
+        {
+          "key": "tv",
+          "label": "Tidal volume (L)",
+          "value": 0.5,
+          "min": 0.2,
+          "max": 1,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "irv",
+          "label": "Inspiratory reserve (L)",
+          "value": 3,
+          "min": 0.5,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "erv",
+          "label": "Expiratory reserve (L)",
+          "value": 1.1,
+          "min": 0.2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "rv",
+          "label": "Residual volume (L)",
+          "value": 1.2,
+          "min": 0.5,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "gas-diffusion",
+      "title": "Gas exchange & diffusion distance",
+      "unit": 11,
+      "description": "Explore area, pressure gradient and barrier thickness in a relative Fick model.",
+      "equation": "Relative diffusion rate = area ratio \u00d7 gradient ratio / thickness ratio",
+      "limits": "Constant diffusion coefficient; perfusion, ventilation mismatch and gas binding are not included. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why thickening an exchange barrier changes flux without changing its direction.",
+      "fields": [
+        {
+          "key": "area",
+          "label": "Exchange area/reference area",
+          "value": 1,
+          "min": 0.1,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "gradient",
+          "label": "Pressure gradient/reference gradient",
+          "value": 1,
+          "min": 0.1,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "thickness",
+          "label": "Barrier thickness/reference thickness",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "food-energy",
+      "title": "Digestion & nutrient energy",
+      "unit": 12,
+      "description": "Estimate energy from macronutrient amounts and separate digestion from absorption.",
+      "equation": "Approximate food energy=4gcarb+4gprotein+9gfat kcal",
+      "limits": "General Atwater estimates; actual digestibility and specific foods vary. No dietary recommendation is provided. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why equal masses of macronutrients contribute different estimated energy.",
+      "fields": [
+        {
+          "key": "carb",
+          "label": "Carbohydrate (g)",
+          "value": 30,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "protein",
+          "label": "Protein (g)",
+          "value": 10,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "fat",
+          "label": "Fat (g)",
+          "value": 5,
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "digestive-enzymes",
+      "title": "Digestive enzymes & saturation",
+      "unit": 12,
+      "description": "Compare enzyme abundance and substrate saturation in an ideal rate model.",
+      "equation": "v=Vmax S/(Km+S)",
+      "limits": "Single-enzyme steady-state curve; pH, enzyme activation, digestion time and intestinal mixing are omitted. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why doubling substrate does not always double digestion rate.",
+      "fields": [
+        {
+          "key": "vmax",
+          "label": "Maximum rate (relative units/min)",
+          "value": 10,
+          "min": 1,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "km",
+          "label": "Half-saturation concentration (relative units)",
+          "value": 2,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "substrate",
+          "label": "Substrate concentration",
+          "value": 4,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "bile",
+      "title": "Bile flow & fat processing",
+      "unit": 12,
+      "description": "Trace bile from liver through storage or direct delivery to the duodenum.",
+      "equation": "Bile supports emulsification and micelle formation; it is not a digestive enzyme.",
+      "limits": "Simplified route schematic. A cystic-duct block prevents gallbladder flow but does not necessarily block liver-to-duodenum flow. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Distinguish bile production, storage and delivery.",
+      "fields": [
+        {
+          "key": "block",
+          "label": "Flow condition",
+          "value": "none",
+          "options": [
+            [
+              "none",
+              "none"
+            ],
+            [
+              "common-duct",
+              "common-duct"
+            ],
+            [
+              "cystic-duct",
+              "cystic-duct"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "gfr",
+      "title": "Glomerular filtration forces",
+      "unit": 13,
+      "description": "Relate a simplified net filtration pressure to a supplied filtration coefficient.",
+      "equation": "GFR=Kf(Pglomerulus\u2212Pcapsule\u2212\u03c0plasma)",
+      "limits": "Simplified fixed-coefficient model; negligible capsule oncotic pressure, no autoregulation. Negative net pressure is outside this forward-filtration view. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how hydrostatic and oncotic forces affect filtration.",
+      "fields": [
+        {
+          "key": "pg",
+          "label": "Glomerular hydrostatic pressure (mmHg)",
+          "value": 55,
+          "min": 35,
+          "max": 70,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "pb",
+          "label": "Capsule hydrostatic pressure (mmHg)",
+          "value": 15,
+          "min": 5,
+          "max": 25,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "onc",
+          "label": "Plasma oncotic pressure (mmHg)",
+          "value": 30,
+          "min": 15,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "kf",
+          "label": "Filtration coefficient (mL/min/mmHg)",
+          "value": 12.5,
+          "min": 1,
+          "max": 20,
+          "step": 0.5,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "renal-clearance",
+      "title": "Renal clearance",
+      "unit": 13,
+      "description": "Calculate the plasma-equivalent volume cleared of a substance each minute.",
+      "equation": "Clearance = U V/P",
+      "limits": "Clearance is substance-specific and is not always GFR. Filtration, secretion and reabsorption affect interpretation. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why clearance is a virtual volume rate rather than the actual urine volume.",
+      "fields": [
+        {
+          "key": "u",
+          "label": "Urine concentration (mg/mL)",
+          "value": 1,
+          "min": 0.01,
+          "max": 10,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "p",
+          "label": "Plasma concentration (mg/mL)",
+          "value": 0.01,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "v",
+          "label": "Urine flow (mL/min)",
+          "value": 1,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "countercurrent",
+      "title": "Nephron transport & water handling",
+      "unit": 13,
+      "description": "Compare loop segments and ADH-dependent collecting-duct permeability.",
+      "equation": "Descending limb favors water movement; ascending limb removes salt with low water permeability.",
+      "limits": "Qualitative nephron segment model; no quantitative medullary gradient or urine osmolality prediction. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how an osmotic gradient and permeability work together.",
+      "fields": [
+        {
+          "key": "adh",
+          "label": "ADH signal",
+          "value": "high",
+          "options": [
+            [
+              "low",
+              "low"
+            ],
+            [
+              "high",
+              "high"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "acid-base",
+      "title": "Respiratory & renal acid\u2013base contributions",
+      "unit": 13,
+      "description": "Relate bicarbonate and carbon dioxide in a simplified physiological buffer equation.",
+      "equation": "pH\u22486.1+log\u2081\u2080(HCO\u2083\u207b/(0.03 PCO\u2082))",
+      "limits": "Approximate bicarbonate buffer relation with supplied values; compensatory responses and patient interpretation are not modeled. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how respiratory CO\u2082 and renal bicarbonate changes can influence the same buffer system.",
+      "fields": [
+        {
+          "key": "bicarb",
+          "label": "Bicarbonate (mmol/L)",
+          "value": 24,
+          "min": 10,
+          "max": 40,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "co2",
+          "label": "CO\u2082 partial pressure (mmHg)",
+          "value": 40,
+          "min": 20,
+          "max": 70,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "gametogenesis",
+      "title": "Gametogenesis & chromosome accounting",
+      "unit": 14,
+      "description": "Compare chromosome and DNA content through meiosis.",
+      "equation": "Replication doubles DNA; meiosis reduces homologous chromosome sets.",
+      "limits": "Chromosome count is by centromeres per cell. Species values are illustrative unless n=23 is chosen for humans. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Distinguish chromosome number from chromatid number and DNA content.",
+      "fields": [
+        {
+          "key": "n",
+          "label": "Haploid chromosome number n",
+          "value": 23,
+          "min": 1,
+          "max": 23,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "stage",
+          "label": "Stage",
+          "value": "after-S",
+          "options": [
+            [
+              "before-S",
+              "before-S"
+            ],
+            [
+              "after-S",
+              "after-S"
+            ],
+            [
+              "after-I",
+              "after-I"
+            ],
+            [
+              "after-II",
+              "after-II"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "reproductive-routes",
+      "title": "Reproductive structures & transport",
+      "unit": 14,
+      "description": "Trace gamete transport and distinguish fertilization from implantation.",
+      "equation": "Typical fertilization occurs in the uterine tube; implantation occurs in the uterus.",
+      "limits": "Canonical structural routes; not a fertility or timing prediction. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain the function of each structure along the selected route.",
+      "fields": [
+        {
+          "key": "route",
+          "label": "Selected route",
+          "value": "oocyte",
+          "options": [
+            [
+              "oocyte",
+              "oocyte"
+            ],
+            [
+              "sperm",
+              "sperm"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "title": "Early development & differentiation",
+      "unit": 14,
+      "description": "Separate cell division, implantation and tissue differentiation in a schematic sequence.",
+      "equation": "Cleavage increases cell number without comparable overall conceptus growth; gastrulation establishes germ layers.",
+      "limits": "Schematic stage sequence without fixed day assignments; no pregnancy or embryo-viability prediction. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why increasing cell number and differentiation are different processes.",
+      "fields": [
+        {
+          "key": "stage",
+          "label": "Focus stage",
+          "value": "blastocyst",
+          "options": [
+            [
+              "zygote",
+              "zygote"
+            ],
+            [
+              "cleavage",
+              "cleavage"
+            ],
+            [
+              "morula",
+              "morula"
+            ],
+            [
+              "blastocyst",
+              "blastocyst"
+            ],
+            [
+              "gastrulation",
+              "gastrulation"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "calcium-feedback",
+      "title": "Calcium regulation & remodeling",
+      "unit": 3,
+      "description": "Connect a simplified low-calcium signal to PTH-regulated processes.",
+      "equation": "PTH can promote renal calcium retention, calcitriol activation and effects that increase calcium release from bone.",
+      "limits": "Qualitative intact-feedback model; no concentration, time course or treatment prediction. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain how multiple organs can participate in restoring one regulated variable.",
+      "fields": [
+        {
+          "key": "signal",
+          "label": "Relative extracellular calcium",
+          "value": "low",
+          "options": [
+            [
+              "low",
+              "low"
+            ],
+            [
+              "reference",
+              "reference"
+            ],
+            [
+              "high",
+              "high"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "glucose-feedback",
+      "title": "Insulin & glucagon feedback",
+      "unit": 7,
+      "description": "Trace complementary hormone responses to glucose availability.",
+      "equation": "Insulin favors storage and glucose uptake in responsive tissues; glucagon favors hepatic glucose output.",
+      "limits": "Qualitative healthy-feedback example. Glucose transport is tissue-specific; insulin is not required for every cell\u2019s uptake. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain coordinated liver, muscle and adipose responses without claiming all cells use the same transporter.",
+      "fields": [
+        {
+          "key": "signal",
+          "label": "Relative glucose condition",
+          "value": "high",
+          "options": [
+            [
+              "low",
+              "low"
+            ],
+            [
+              "reference",
+              "reference"
+            ],
+            [
+              "high",
+              "high"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "oxygen-delivery",
+      "title": "Oxygen content & delivery",
+      "unit": 11,
+      "description": "Separate hemoglobin-bound oxygen, dissolved oxygen and blood flow.",
+      "equation": "Content\u22481.34Hb\u00b7S+0.003PO\u2082; delivery=content\u00d7CO\u00d710",
+      "limits": "Illustrative content relation; saturation is a fraction in the equation. No tissue consumption, extraction or clinical adequacy is inferred. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why normal partial pressure alone does not establish normal oxygen delivery.",
+      "fields": [
+        {
+          "key": "hb",
+          "label": "Hemoglobin (g/dL)",
+          "value": 15,
+          "min": 8,
+          "max": 18,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "sat",
+          "label": "Hemoglobin saturation (%)",
+          "value": 97,
+          "min": 60,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "pa",
+          "label": "O\u2082 partial pressure (mmHg)",
+          "value": 95,
+          "min": 40,
+          "max": 120,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "co",
+          "label": "Cardiac output (L/min)",
+          "value": 5,
+          "min": 2,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "transport-maximum",
+      "title": "Filtered load & transport maximum",
+      "unit": 13,
+      "description": "Compare filtration, capped reabsorption and excretion for a model solute.",
+      "equation": "Filtered load=GFR\u00d7P/100; reabsorption=min(load,Tm)",
+      "limits": "Sharp transport cap with no secretion or nephron heterogeneity; actual threshold can show splay rather than a sharp corner. Educational physiology; not a patient-specific or diagnostic model.",
+      "goal": "Explain why excretion can begin when a transport system saturates.",
+      "fields": [
+        {
+          "key": "gfr",
+          "label": "GFR (mL/min)",
+          "value": 125,
+          "min": 50,
+          "max": 180,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "p",
+          "label": "Plasma solute (mg/dL)",
+          "value": 100,
+          "min": 20,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "tm",
+          "label": "Transport maximum (mg/min)",
+          "value": 300,
+          "min": 100,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    }
+  ]
+}

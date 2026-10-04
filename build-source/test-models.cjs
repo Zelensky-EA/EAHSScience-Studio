@@ -1,0 +1,37 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
+const M=require('./source/models.js');global.STEM=M;const V=require('./source/render.js');
+const get=id=>M.activities.find(a=>a.id===id),evalAt=(id,s)=>M.evaluate(get(id),{...M.defaults(get(id)),...s}),near=(a,b,eps=1e-8)=>assert.ok(Math.abs(a-b)<=eps*Math.max(1,Math.abs(b)),`${a} != ${b}`);
+near(evalAt('moles',{mass:18.015}).metrics[0].value,1);near(evalAt('isotopes',{a:10,b:12,fraction:25}).metrics[0].value,11.5);
+near(evalAt('gas-law',{n:1,t:273.15,v:22.414}).metrics[0].value,1,1e-4);
+near(evalAt('dilution',{c:1,v1:10,v2:100}).check.answer,.1);near(evalAt('beer-law',{epsilon:100,path:1,c:.01}).check.answer,1);
+near(evalAt('stoichiometry',{a:3,b:4,ca:1,cb:2,cp:1}).check.answer,2);near(evalAt('initial-rates',{ratio:2,rate:8}).check.answer,3);
+near(evalAt('integrated-rate',{order:'first',initial:1,k:.1,time:Math.log(2)/.1}).check.answer,.5);
+near(evalAt('calorimetry',{mass:100,c:4.18,dt:5}).check.answer,2090);
+near(evalAt('ice',{a:1,b:0,k:4}).check.answer,.8);near(evalAt('solubility',{ksp:1e-8,common:0}).check.answer,1e-4);
+let haber=evalAt('haber'),vals=haber.metrics.map(m=>m.value);near(vals[1]**2/(vals[2]*vals[3]**3),1,1e-7);
+near(evalAt('strong-ph',{kind:'acid',c:.001}).check.answer,3,1e-7);near(evalAt('strong-ph',{kind:'acid',c:1e-10}).check.answer,7,1e-4);
+let acid=evalAt('weak-acid',{c:.1,ka:1.8e-5}),h=10**(-acid.check.answer);near(h-1e-14/h-.1*1.8e-5/(1.8e-5+h),0);
+near(evalAt('titration',{ca:.1,va:25,cb:.1,vb:25}).check.answer,25);assert.ok(evalAt('titration',{vb:25}).metrics[0].value>7);
+near(evalAt('gibbs',{h:-40,s:-100,t:298}).check.answer,-10.2);near(evalAt('cell',{e:1.1,n:2,q:1}).check.answer,1.1);
+near(evalAt('electrolysis',{i:1,time:600,m:63.546,n:2}).check.answer,63.546*600/(2*96485.33212));
+near(evalAt('removable',{a:2}).check.answer,4);near(evalAt('secant',{family:'square',x:2,h:.1}).metrics[0].value,4.1);
+near(evalAt('product',{b:1,x:1}).check.answer,2*Math.sin(1)+Math.cos(1));near(evalAt('quotient',{c:1,x:1}).check.answer,0);
+near(evalAt('implicit',{r:2,x:1,branch:'upper'}).check.answer,-1/Math.sqrt(3));near(evalAt('inverse',{b:2,x:2}).check.answer,.25);
+near(evalAt('motion',{a:1,b:-3,time:1}).check.answer,0);near(evalAt('related-sphere',{r:2,dr:.1}).check.answer,1.6*Math.PI);
+near(evalAt('mvt',{a:0,b:2}).check.answer,1);near(evalAt('absolute-extrema',{a:-2,b:2}).check.answer,2);
+near(evalAt('riemann',{family:'square',a:0,b:2,n:8}).check.answer,8/3);near(evalAt('accumulation',{c:1,x:2}).check.answer,3);
+near(evalAt('distance',{a:0,b:3,c:1}).check.answer,2.5);near(evalAt('area-between',{h:4}).check.answer,32/3);
+near(evalAt('cross-sections',{h:4,shape:'square'}).check.answer,512/15);near(evalAt('parts',{a:0,b:1}).check.answer,1);
+near(evalAt('partial-fractions',{a:1,b:2,end:2}).check.answer,Math.log(1.5));near(evalAt('improper',{p:2,cutoff:10}).check.answer,.9);
+near(evalAt('euler',{y0:1,h:.2,steps:5}).check.answer,1.2);near(evalAt('geometric',{a:1,r:.5,n:10}).check.answer,2*(1-.5**10));
+near(evalAt('polar-curve',{a:2,k:3,end:Math.PI/6}).check.answer,Math.PI/6);near(evalAt('taylor-exp',{center:0,degree:2,x:1}).check.answer,2.5);
+near(evalAt('cardiac-output',{hr:70,sv:70}).check.answer,4.9);near(evalAt('resistance',{ratio:2}).check.answer,1/16);
+near(evalAt('ventilation',{tv:500,dead:150,rate:12}).check.answer,4.2);near(evalAt('gfr').check.answer,125);near(evalAt('renal-clearance').check.answer,100);
+near(evalAt('transport-maximum',{gfr:125,p:100,tm:300}).check.answer,125);near(evalAt('oxygen-delivery').check.answer,(1.34*15*.97+.003*95)*50);
+near(evalAt('acid-base',{bicarb:24,co2:40}).check.answer,6.1+Math.log10(20));near(evalAt('gametogenesis',{n:23,stage:'after-S'}).check.answer,46);
+for(const code of ['ap-calculus-ab','ap-calculus-bc']){const a=M.forCourse(code);assert.equal(a.some(a=>a.id==='euler'),code.endsWith('bc'));assert.equal(a.some(a=>a.id==='logistic'),code.endsWith('bc'));assert.equal(a.some(a=>a.unit===10),code.endsWith('bc'));}
+assert.equal(M.grade(evalAt('photon').check,'0').correct,false,'Tiny photon-energy answers must use relative tolerance.');
+let defaults=0,variants=0,errors=0;for(const a of M.activities){const state=M.defaults(a),out=M.evaluate(a,state);assert.ok(out.check,a.id);const response=out.check.options?String(out.check.correct):String(out.check.answer);assert.equal(M.grade(out.check,response).correct,true,a.id);assert.equal(M.grade(out.check,'').valid,false);for(const mono of [false,true]){const svg=V.draw(a,out,{mono,title:'EAHS model'});assert.ok(svg.includes('<svg'));assert.ok(!/NaN|Infinity|undefined/.test(svg),a.id);assert.ok(V.rows(out).length>1);}defaults++;
+for(const f of a.fields){for(const v of f.type==='select'?f.options.map(o=>o[0]):[f.min,f.max]){try{const o=M.evaluate(a,{...state,[f.key]:v});if(o.check.answer!==undefined)assert.ok(Number.isFinite(o.check.answer),a.id);let svg=V.draw(a,o);assert.ok(!/NaN|Infinity|undefined/.test(svg),a.id);}catch(e){if(e instanceof TypeError||e instanceof ReferenceError||e instanceof SyntaxError||e.name==='AssertionError')throw Error(a.id+'/'+f.key+'/'+v+': '+e.message);errors++;}variants++;}}}
+console.log(`PASS: scientific/mathematical invariants, AB/BC scope, ${defaults} default model checks/figures, ${variants} parameter variants (${errors} expected model-domain errors).`);

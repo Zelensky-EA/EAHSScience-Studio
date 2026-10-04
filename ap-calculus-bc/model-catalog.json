@@ -1,0 +1,2166 @@
+{
+  "title": "AP Calculus BC",
+  "domain": "bc",
+  "units": [
+    "Limits and Continuity",
+    "Differentiation: Definition and Fundamental Properties",
+    "Differentiation: Composite, Implicit, and Inverse Functions",
+    "Contextual Applications of Differentiation",
+    "Analytical Applications of Differentiation",
+    "Integration and Accumulation of Change",
+    "Differential Equations",
+    "Applications of Integration",
+    "Parametric Equations, Polar Coordinates, and Vector-Valued Functions",
+    "Infinite Sequences and Series"
+  ],
+  "source": "https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf",
+  "activities": [
+    {
+      "id": "removable",
+      "title": "Removable discontinuities",
+      "unit": 1,
+      "description": "Approach a missing point while separating f(a) from the limit.",
+      "equation": "(x\u00b2\u2212a\u00b2)/(x\u2212a) = x+a, only for x\u2260a",
+      "limits": "A factored rational family; the original expression is undefined at a. The graph explicitly marks the hole.",
+      "goal": "Explain why a limit can exist even when the function value is missing.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Missing-point x-coordinate a",
+          "value": 2,
+          "min": -3,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Distance h from a",
+          "value": 0.1,
+          "min": 0.0001,
+          "max": 1,
+          "step": 0.0001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "one-sided",
+      "title": "One-sided limits & jumps",
+      "unit": 1,
+      "description": "Change left and right limits independently.",
+      "equation": "A two-sided limit exists only if both one-sided limits agree.",
+      "limits": "Piecewise constant example, with separately defined f(0).",
+      "goal": "Distinguish function value, one-sided limits and the two-sided limit.",
+      "fields": [
+        {
+          "key": "left",
+          "label": "Left-limit value",
+          "value": 1,
+          "min": -5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "right",
+          "label": "Right-limit value",
+          "value": 3,
+          "min": -5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "value",
+          "label": "Defined f(0)",
+          "value": 2,
+          "min": -5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "squeeze",
+      "title": "Squeeze theorem & oscillation",
+      "unit": 1,
+      "description": "Bound an oscillating function near zero.",
+      "equation": "\u2212ax\u00b2 \u2264 ax\u00b2sin(1/x) \u2264 ax\u00b2",
+      "limits": "Set the value at 0 to 0 for plotting; rapid oscillations below sample resolution are not resolved.",
+      "goal": "Justify a limit using bounds rather than visual smoothness.",
+      "fields": [
+        {
+          "key": "amplitude",
+          "label": "Envelope multiplier a",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "window",
+          "label": "Half-width of viewed interval",
+          "value": 1,
+          "min": 0.05,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ivt",
+      "title": "Intermediate value theorem",
+      "unit": 1,
+      "description": "Test a target against endpoint values of a continuous cubic.",
+      "equation": "Continuous f on [a,b] takes every value between f(a) and f(b).",
+      "limits": "f(x)=x\u00b3\u22123x. Endpoint bracketing guarantees existence, not uniqueness. Lack of bracketing does not establish nonexistence.",
+      "goal": "State hypotheses and distinguish a guarantee from a guess.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Left endpoint a",
+          "value": -2,
+          "min": -3,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Right endpoint b",
+          "value": 2,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "target",
+          "label": "Target y-value",
+          "value": 1,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "secant",
+      "title": "Secants & the derivative limit",
+      "unit": 2,
+      "description": "Shrink a secant interval and compare its slope with an analytic derivative.",
+      "equation": "Secant slope = [f(x+h)\u2212f(x)]/h",
+      "limits": "Preset functions only. h cannot be zero; derivatives are analytic rather than inferred from tiny floating-point differences.",
+      "goal": "Explain what changes and what remains fixed as h approaches zero.",
+      "fields": [
+        {
+          "key": "family",
+          "label": "Function family",
+          "value": "square",
+          "options": [
+            [
+              "square",
+              "square"
+            ],
+            [
+              "cube",
+              "cube"
+            ],
+            [
+              "sin",
+              "sin"
+            ],
+            [
+              "exp",
+              "exp"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "x",
+          "label": "Base x-coordinate",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Signed step h",
+          "value": 0.5,
+          "min": -1,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "tangent",
+      "title": "Tangent lines & local behavior",
+      "unit": 2,
+      "description": "Move along a cubic and compare the tangent with the curve.",
+      "equation": "Tangent: y=f(a)+f\u2032(a)(x\u2212a)",
+      "limits": "f(x)=x\u00b3\u22123x; the tangent is local, not a global replacement for the curve.",
+      "goal": "Explain why equal values at the tangency point do not imply equal values elsewhere.",
+      "fields": [
+        {
+          "key": "x",
+          "label": "Tangency x-coordinate",
+          "value": 1.5,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "product",
+      "title": "Product rule",
+      "unit": 2,
+      "description": "Compare the derivative of x\u00b2sin(bx) to both contributing terms.",
+      "equation": "(uv)\u2032=u\u2032v+uv\u2032",
+      "limits": "All trigonometric inputs are in radians. Neither factor is treated as constant.",
+      "goal": "Explain why multiplying two derivatives is not the product rule.",
+      "fields": [
+        {
+          "key": "b",
+          "label": "Frequency multiplier b",
+          "value": 1,
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "quotient",
+      "title": "Quotient rule",
+      "unit": 2,
+      "description": "Investigate the derivative of x/(x\u00b2+c) with a positive denominator parameter.",
+      "equation": "(u/v)\u2032=(u\u2032v\u2212uv\u2032)/v\u00b2",
+      "limits": "c>0, so the chosen denominator never vanishes for real x.",
+      "goal": "Explain why the sign of the derivative can change even when the denominator is positive.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Positive denominator constant c",
+          "value": 1,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -3,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "chain",
+      "title": "Chain rule & composition",
+      "unit": 3,
+      "description": "Differentiate sin(bx\u00b2) and track the inner derivative.",
+      "equation": "d/dx sin(bx\u00b2) = cos(bx\u00b2)\u00b72bx",
+      "limits": "Angles in radians; x range is bounded to display multiple oscillations.",
+      "goal": "Explain why the outer derivative must be multiplied by the inner derivative.",
+      "fields": [
+        {
+          "key": "b",
+          "label": "Inner coefficient b",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 0.5,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "implicit",
+      "title": "Implicit differentiation",
+      "unit": 3,
+      "description": "Locate a circle point and calculate its tangent slope on a selected branch.",
+      "equation": "x\u00b2+y\u00b2=r\u00b2 \u21d2 dy/dx=\u2212x/y",
+      "limits": "At x=\u00b1r the tangent is vertical and a finite dy/dx does not exist. This explorer requires |x|<r.",
+      "goal": "Explain why solving for y is not required to differentiate implicitly.",
+      "fields": [
+        {
+          "key": "r",
+          "label": "Circle radius",
+          "value": 2,
+          "min": 0.5,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Point x-coordinate",
+          "value": 1,
+          "min": -3,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "branch",
+          "label": "Circle branch",
+          "value": "upper",
+          "options": [
+            [
+              "upper",
+              "upper"
+            ],
+            [
+              "lower",
+              "lower"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "inverse",
+      "title": "Inverse functions & derivative",
+      "unit": 3,
+      "description": "Compare a monotone exponential with its logarithmic inverse.",
+      "equation": "(f\u207b\u00b9)\u2032(x)=1/f\u2032(f\u207b\u00b9(x)); for f=e^(bx), (f\u207b\u00b9)\u2032=1/(bx)",
+      "limits": "f is one-to-one for b>0; logarithm input must be positive.",
+      "goal": "Explain why derivatives of inverse functions are evaluated at related points.",
+      "fields": [
+        {
+          "key": "b",
+          "label": "Exponent multiplier b",
+          "value": 1,
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Inverse-function input x",
+          "value": 2,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "second",
+      "title": "Higher derivatives & concavity",
+      "unit": 3,
+      "description": "Connect cubic function, first derivative and second derivative.",
+      "equation": "f=ax\u00b3+bx; f\u2032=3ax\u00b2+b; f\u2033=6ax",
+      "limits": "Continuous polynomial family. Concavity concerns how f\u2032 changes, not whether f is positive.",
+      "goal": "Distinguish decreasing from concave down using both derivatives.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Cubic coefficient a",
+          "value": 1,
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Linear coefficient b",
+          "value": -3,
+          "min": -5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "title": "Position, velocity & acceleration",
+      "unit": 4,
+      "description": "Interpret a polynomial position model and locate instantaneous rates.",
+      "equation": "s=at\u00b3+bt; v=3at\u00b2+b; acceleration=6at",
+      "limits": "One-dimensional ideal motion; signs describe direction, not speed magnitude.",
+      "goal": "Explain when an object speeds up using velocity and acceleration signs.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Cubic coefficient (m/s\u00b3)",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Linear coefficient (m/s)",
+          "value": -3,
+          "min": -8,
+          "max": 8,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Time (s)",
+          "value": 1,
+          "min": 0,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "related-sphere",
+      "title": "Related rates: expanding sphere",
+      "unit": 4,
+      "description": "Relate a radius rate to volume rate at one instant.",
+      "equation": "dV/dt = 4\u03c0r\u00b2 dr/dt",
+      "limits": "Sphere geometry with instantaneous supplied radius rate. A constant radius rate does not give a constant volume rate.",
+      "goal": "Explain why the current radius is needed as well as its rate.",
+      "fields": [
+        {
+          "key": "r",
+          "label": "Radius (cm)",
+          "value": 2,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dr",
+          "label": "Radius rate (cm/s)",
+          "value": 0.1,
+          "min": -1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "linearization",
+      "title": "Linear approximation",
+      "unit": 4,
+      "description": "Approximate a square root near a positive base point and compare the exact value.",
+      "equation": "L(a+h)=\u221aa + h/(2\u221aa)",
+      "limits": "Uses a local tangent approximation; the exact square root remains defined for these bounds.",
+      "goal": "Explain how error changes as the target moves away from the base point.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Positive base a",
+          "value": 4,
+          "min": 0.5,
+          "max": 9,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dx",
+          "label": "Change in x",
+          "value": 0.2,
+          "min": -0.4,
+          "max": 0.4,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "lhopital",
+      "title": "L\u2019H\u00f4pital\u2019s rule & indeterminate limits",
+      "unit": 4,
+      "description": "Compare a 0/0 family with its derivative ratio near zero.",
+      "equation": "lim x\u21920 sin(bx)/x = b",
+      "limits": "Requires the 0/0 form and valid derivative-ratio limit; direct substitution alone does not give the limit. Radians are required.",
+      "goal": "State the indeterminate form before applying a rule.",
+      "fields": [
+        {
+          "key": "b",
+          "label": "Frequency multiplier b",
+          "value": 2,
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Approach distance h",
+          "value": 0.1,
+          "min": 0.0001,
+          "max": 0.5,
+          "step": 0.0001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "mvt",
+      "title": "Mean value theorem",
+      "unit": 5,
+      "description": "Locate the point whose tangent slope equals an interval\u2019s secant slope.",
+      "equation": "For f=x\u00b2, f\u2032(c)=[f(b)\u2212f(a)]/(b\u2212a), so c=(a+b)/2",
+      "limits": "Continuous on [a,b], differentiable on (a,b). Only the quadratic family is solved here.",
+      "goal": "Explain why both MVT hypotheses are needed.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Left endpoint",
+          "value": 0,
+          "min": -3,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Right endpoint",
+          "value": 2,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "critical",
+      "title": "Critical points & sign analysis",
+      "unit": 5,
+      "description": "Use the derivative\u2019s sign to classify a cubic\u2019s stationary points.",
+      "equation": "f\u2032=3ax\u00b2+b; sign changes classify extrema",
+      "limits": "For b<0 there are two stationary points; b=0 is a stationary inflection; b>0 has none.",
+      "goal": "Explain why f\u2032=0 alone does not establish a local extremum.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Positive cubic coefficient a",
+          "value": 1,
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Linear coefficient b",
+          "value": -3,
+          "min": -6,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "absolute-extrema",
+      "title": "Absolute extrema on an interval",
+      "unit": 5,
+      "description": "Compare endpoints and interior critical points rather than checking only stationary points.",
+      "equation": "Candidates are endpoints and interior critical points.",
+      "limits": "f=x\u00b3\u22123x is continuous; the closed interval guarantees attained extrema.",
+      "goal": "Explain why endpoints must be checked even when their derivatives are not zero.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Left endpoint",
+          "value": -2,
+          "min": -3,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Right endpoint",
+          "value": 2,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "optimization",
+      "title": "Optimization: open-top box",
+      "unit": 5,
+      "description": "Change a corner cut and locate maximum volume for a rectangular sheet.",
+      "equation": "V=x(L\u22122x)(W\u22122x)",
+      "limits": "Cuts require 0<x<min(L,W)/2. Thin sheet, no material thickness or construction constraints.",
+      "goal": "Derive a function, state its domain and justify the maximum.",
+      "fields": [
+        {
+          "key": "length",
+          "label": "Sheet length",
+          "value": 10,
+          "min": 4,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "width",
+          "label": "Sheet width",
+          "value": 8,
+          "min": 4,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "cut",
+          "label": "Corner cut x",
+          "value": 1,
+          "min": 0.01,
+          "max": 3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "riemann",
+      "title": "Riemann sums",
+      "unit": 6,
+      "description": "Compare left, right and midpoint rectangle approximations with an exact definite integral.",
+      "equation": "Sum f(x\u1d62*)\u0394x approaches \u222bf(x)dx",
+      "limits": "Equal-width rectangles; preset analytic functions. Signed contributions are retained.",
+      "goal": "Explain over- and under-estimation using monotonicity, not a memorized universal rule.",
+      "fields": [
+        {
+          "key": "family",
+          "label": "Function family",
+          "value": "square",
+          "options": [
+            [
+              "square",
+              "square"
+            ],
+            [
+              "cube",
+              "cube"
+            ],
+            [
+              "sin",
+              "sin"
+            ],
+            [
+              "exp",
+              "exp"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "a",
+          "label": "Lower bound",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Upper bound",
+          "value": 2,
+          "min": -1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Number of subintervals",
+          "value": 8,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "method",
+          "label": "Sample point",
+          "value": "midpoint",
+          "options": [
+            [
+              "left",
+              "left"
+            ],
+            [
+              "right",
+              "right"
+            ],
+            [
+              "midpoint",
+              "midpoint"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "accumulation",
+      "title": "Accumulation & the FTC",
+      "unit": 6,
+      "description": "Explore A(x)=\u222b\u2080\u02e3(t\u00b2\u2212c)dt and connect its slope to the integrand.",
+      "equation": "A(x)=x\u00b3/3\u2212cx; A\u2032(x)=x\u00b2\u2212c",
+      "limits": "Variable upper limit may be negative; orientation determines the sign of accumulation.",
+      "goal": "Explain why an accumulation function can decrease even when its value is positive.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Integrand constant c",
+          "value": 1,
+          "min": 0,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Upper limit x",
+          "value": 2,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ftc-chain",
+      "title": "FTC with a composite upper bound",
+      "unit": 6,
+      "description": "Differentiate an integral whose upper endpoint is x\u00b2.",
+      "equation": "d/dx \u222b\u2080^(x\u00b2)sin(t)dt = 2x sin(x\u00b2)",
+      "limits": "Angles in radians; the accumulation function is 1\u2212cos(x\u00b2).",
+      "goal": "Explain why simply substituting x\u00b2 into the integrand is incomplete.",
+      "fields": [
+        {
+          "key": "x",
+          "label": "Input x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "substitution",
+      "title": "Definite integration & substitution",
+      "unit": 6,
+      "description": "Transform \u222b2x cos(x\u00b2)dx and preserve the definite bounds.",
+      "equation": "\u222b\u2090\u1d472x cos(x\u00b2)dx = sin(b\u00b2)\u2212sin(a\u00b2)",
+      "limits": "Signed definite integral; reversed bounds are allowed and negate the result.",
+      "goal": "Explain why bounds must change when the integration variable changes.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Lower bound",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Upper bound",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "slope-field",
+      "title": "Slope fields & solution curves",
+      "unit": 7,
+      "description": "Compare local slopes y\u2032=x\u2212y with a solution through an initial point.",
+      "equation": "y=x\u22121+(y\u2080\u2212x\u2080+1)e^(\u2212(x\u2212x\u2080))",
+      "limits": "Analytic solution of y\u2032=x\u2212y; the slope-field marks are local directions, not finite changes.",
+      "goal": "Explain how the same differential equation has many solution curves.",
+      "fields": [
+        {
+          "key": "x0",
+          "label": "Initial x",
+          "value": 0,
+          "min": -1,
+          "max": 1,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "y0",
+          "label": "Initial y",
+          "value": 1,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "separation",
+      "title": "Separable differential equations",
+      "unit": 7,
+      "description": "Compare solution values for y\u2032=xy after an initial condition selects a constant.",
+      "equation": "dy/y=x dx \u21d2 y=y\u2080e^(x\u00b2/2)",
+      "limits": "Positive initial value; the identically zero solution also exists but is not included in these controls.",
+      "goal": "Explain why division by y requires attention to a possible zero solution.",
+      "fields": [
+        {
+          "key": "y0",
+          "label": "Initial y(0)",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "exponential-de",
+      "title": "Exponential differential equations",
+      "unit": 7,
+      "description": "Model growth or decay from a constant relative rate.",
+      "equation": "y\u2032=ky \u21d2 y=y\u2080e^(kt)",
+      "limits": "Constant rate and no resource limit or source term; time units must match k.",
+      "goal": "Explain the distinction between constant relative rate and constant absolute rate.",
+      "fields": [
+        {
+          "key": "y0",
+          "label": "Initial amount",
+          "value": 100,
+          "min": 1,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Relative rate (1/time)",
+          "value": 0.2,
+          "min": -1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Elapsed time",
+          "value": 3,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "verify-solution",
+      "title": "Verifying a differential-equation solution",
+      "unit": 7,
+      "description": "Substitute a candidate y=Ce^(ax) into y\u2032=ky.",
+      "equation": "Residual y\u2032\u2212ky = (a\u2212k)Ce^(ax)",
+      "limits": "For nonzero C, the candidate solves the equation for all x only if a=k. One numerical point alone is not a proof.",
+      "goal": "Explain why checking a derivative is stronger than checking only an initial value.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Candidate multiplier C",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "a",
+          "label": "Candidate exponent a",
+          "value": 0.5,
+          "min": -1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Equation coefficient k",
+          "value": 0.5,
+          "min": -1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "distance",
+      "title": "Displacement & total distance",
+      "unit": 8,
+      "description": "Split a linear velocity integral at a direction change.",
+      "equation": "Displacement=\u222bv dt; distance=\u222b|v|dt, v=t\u2212c",
+      "limits": "One-dimensional motion. Integrals are evaluated analytically using the antiderivative of |t\u2212c|.",
+      "goal": "Explain why total distance can exceed displacement magnitude.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Zero-velocity time c (s)",
+          "value": 1,
+          "min": 0,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "a",
+          "label": "Starting time (s)",
+          "value": 0,
+          "min": 0,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Ending time (s)",
+          "value": 3,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "area-between",
+      "title": "Area between curves",
+      "unit": 8,
+      "description": "Use the correct upper-minus-lower integrand between two intersections.",
+      "equation": "Area between y=H\u2212x\u00b2 and y=0 is 4H^(3/2)/3",
+      "limits": "The full bounded region is between x=\u2212\u221aH and x=\u221aH. Area is nonnegative.",
+      "goal": "Explain how intersections determine bounds.",
+      "fields": [
+        {
+          "key": "h",
+          "label": "Parabola height H",
+          "value": 4,
+          "min": 0.1,
+          "max": 9,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "volumes",
+      "title": "Disks & washers",
+      "unit": 8,
+      "description": "Compare rotational cross-section area with region height.",
+      "equation": "V = \u222b\u03c0(R\u00b2\u2212r\u00b2)dx",
+      "limits": "Constant-radius annular solid over the interval. Real variable-radius problems require functions inside the integral.",
+      "goal": "Explain why squaring a difference of radii is not the washer area.",
+      "fields": [
+        {
+          "key": "outer",
+          "label": "Outer radius R",
+          "value": 3,
+          "min": 0.1,
+          "max": 6,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "inner",
+          "label": "Inner radius r",
+          "value": 1,
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "length",
+          "label": "Interval length",
+          "value": 2,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "average-value",
+      "title": "Average value of a function",
+      "unit": 8,
+      "description": "Compare an integral\u2019s total with its interval-normalized average.",
+      "equation": "favg = (1/(b\u2212a))\u222b\u2090\u1d47f(x)dx",
+      "limits": "Continuous preset families; an average value is not necessarily the midpoint function value.",
+      "goal": "Explain why dividing by interval length is required.",
+      "fields": [
+        {
+          "key": "family",
+          "label": "Function family",
+          "value": "square",
+          "options": [
+            [
+              "square",
+              "square"
+            ],
+            [
+              "cube",
+              "cube"
+            ],
+            [
+              "sin",
+              "sin"
+            ],
+            [
+              "exp",
+              "exp"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "a",
+          "label": "Left endpoint",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Right endpoint",
+          "value": 2,
+          "min": -1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "parts",
+      "title": "Integration by parts",
+      "unit": 6,
+      "description": "Evaluate \u222bxe\u02e3dx and compare the boundary term with the remaining integral.",
+      "equation": "\u222bu dv = uv\u2212\u222bv du; \u222bxe\u02e3dx=(x\u22121)e\u02e3+C",
+      "limits": "BC topic; definite integral preserves bound orientation.",
+      "goal": "Justify a choice of u and dv that simplifies the remaining integral.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Lower bound",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Upper bound",
+          "value": 1,
+          "min": -2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "partial-fractions",
+      "title": "Partial fractions",
+      "unit": 6,
+      "description": "Decompose a rational integrand with distinct linear factors.",
+      "equation": "1/((x+a)(x+b))=[1/(x+a)\u22121/(x+b)]/(b\u2212a)",
+      "limits": "BC topic; distinct positive a and b keep poles outside [0,end].",
+      "goal": "Explain why a rational decomposition can make integration simpler.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Positive factor a",
+          "value": 1,
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Positive factor b",
+          "value": 2,
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "end",
+          "label": "Upper integration bound",
+          "value": 2,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "improper",
+      "title": "Improper integrals & convergence",
+      "unit": 6,
+      "description": "Compare finite cutoffs with the infinite integral of x^(\u2212p).",
+      "equation": "\u222b\u2081\u221e x^(\u2212p)dx converges only for p>1",
+      "limits": "BC topic. A finite positive cutoff always gives finite area, which alone does not establish convergence.",
+      "goal": "Distinguish a large finite approximation from a convergent improper integral.",
+      "fields": [
+        {
+          "key": "p",
+          "label": "Exponent p",
+          "value": 2,
+          "min": 0.2,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "cutoff",
+          "label": "Finite upper cutoff B",
+          "value": 10,
+          "min": 2,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "euler",
+      "title": "Euler\u2019s method",
+      "unit": 7,
+      "description": "Compare numerical steps with the exact solution of y\u2032=x+y.",
+      "equation": "ynew=yold+h f(xold,yold)",
+      "limits": "BC topic; forward Euler with uniform steps. Longer times and larger steps can yield large errors.",
+      "goal": "Explain why each step uses a local tangent approximation.",
+      "fields": [
+        {
+          "key": "y0",
+          "label": "Initial y(0)",
+          "value": 1,
+          "min": -1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Step size h",
+          "value": 0.2,
+          "min": 0.01,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "steps",
+          "label": "Number of steps",
+          "value": 5,
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "logistic",
+      "title": "Logistic differential equations",
+      "unit": 7,
+      "description": "Locate the inflection population and compare initial and limiting growth.",
+      "equation": "y\u2032=ry(1\u2212y/K); y=K/[1+(K/y\u2080\u22121)e^(\u2212rt)]",
+      "limits": "BC topic; closed population with constant positive r and K, no age structure or time delay.",
+      "goal": "Explain why total growth peaks at K/2.",
+      "fields": [
+        {
+          "key": "y0",
+          "label": "Initial population",
+          "value": 50,
+          "min": 1,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Carrying capacity K",
+          "value": 1000,
+          "min": 100,
+          "max": 2000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "r",
+          "label": "Intrinsic rate r",
+          "value": 0.3,
+          "min": 0.01,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Evaluation time",
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "arc-length",
+      "title": "Arc length of a graph",
+      "unit": 8,
+      "description": "Approximate the length of y=x\u00b2 over an interval.",
+      "equation": "L=\u222b\u221a(1+(dy/dx)\u00b2)dx",
+      "limits": "BC topic; Simpson numerical integration with 1000 panels. This is length, not area.",
+      "goal": "Explain the origin of the square root using small line segments.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Left endpoint",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Right endpoint",
+          "value": 2,
+          "min": -1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "parametric-tangent",
+      "title": "Parametric derivatives",
+      "unit": 9,
+      "description": "Analyze x=t, y=at\u00b2 and distinguish parameter rate from slope.",
+      "equation": "dy/dx=(dy/dt)/(dx/dt)=2at",
+      "limits": "BC-only unit. Here dx/dt=1 so all tangent slopes are finite.",
+      "goal": "Explain why dy/dt alone is not generally a slope in the xy-plane.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Parabola coefficient a",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Parameter value t",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ellipse",
+      "title": "Parametric ellipse & vertical tangents",
+      "unit": 9,
+      "description": "Change ellipse radii and evaluate a tangent at a parameter angle.",
+      "equation": "x=a cos t, y=b sin t; dy/dx=\u2212b cos t/(a sin t)",
+      "limits": "BC-only unit. The displayed slope is undefined where sin t=0; no finite slope should be assigned there.",
+      "goal": "Distinguish a vertical tangent from a breakdown of the parametric curve.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Horizontal semiaxis a",
+          "value": 3,
+          "min": 0.2,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Vertical semiaxis b",
+          "value": 2,
+          "min": 0.2,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Parameter angle (rad)",
+          "value": 1,
+          "min": 0.01,
+          "max": 6.27,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "vector-motion",
+      "title": "Vector-valued motion",
+      "unit": 9,
+      "description": "Calculate speed and acceleration for r(t)=\u27e8t,at\u00b2\u27e9.",
+      "equation": "v=\u27e81,2at\u27e9; speed=\u221a(1+4a\u00b2t\u00b2); acceleration=\u27e80,2a\u27e9",
+      "limits": "BC-only unit. Coordinate units are meters and parameter units seconds for this ideal path.",
+      "goal": "Explain why speed is a magnitude rather than the sum of velocity components.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Vertical acceleration parameter a",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Time (s)",
+          "value": 1,
+          "min": 0,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "parametric-length",
+      "title": "Parametric arc length",
+      "unit": 9,
+      "description": "Integrate speed along an ellipse rather than using graph width.",
+      "equation": "L=\u222b\u221a((dx/dt)\u00b2+(dy/dt)\u00b2)dt",
+      "limits": "BC-only unit. Numerical Simpson integration with 1000 panels over t=0 to the chosen endpoint.",
+      "goal": "Explain why different coordinate speeds contribute quadratically.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Horizontal semiaxis",
+          "value": 3,
+          "min": 0.2,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Vertical semiaxis",
+          "value": 2,
+          "min": 0.2,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "end",
+          "label": "Ending parameter angle (rad)",
+          "value": 3.141592653589793,
+          "min": 0.1,
+          "max": 6.28,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "polar-curve",
+      "title": "Polar curves & traced area",
+      "unit": 9,
+      "description": "Change a rose curve and integrate area over a specified parameter interval.",
+      "equation": "r=a cos(k\u03b8); traced area = \u00bd\u222br\u00b2d\u03b8",
+      "limits": "BC-only unit. Integrating over an interval that retraces the curve counts area with multiplicity, not necessarily unique enclosed area.",
+      "goal": "Explain why negative r does not make the area integrand negative.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Amplitude a",
+          "value": 2,
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Integer angular multiplier k",
+          "value": 3,
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "end",
+          "label": "Upper angle (rad)",
+          "value": 0.5235987755982988,
+          "min": 0.01,
+          "max": 6.28,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "polar-tangent",
+      "title": "Polar tangents",
+      "unit": 9,
+      "description": "Differentiate r=a(1+cos \u03b8) using Cartesian coordinate derivatives.",
+      "equation": "dy/dx=(r\u2032sin\u03b8+r cos\u03b8)/(r\u2032cos\u03b8\u2212r sin\u03b8)",
+      "limits": "BC-only unit. Cusp and vertical-tangent cases require separate analysis; finite slope checks exclude near-zero dx/d\u03b8.",
+      "goal": "Explain why dr/d\u03b8 is not dy/dx.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Cardioid scale a",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "theta",
+          "label": "Angle \u03b8 (rad)",
+          "value": 1,
+          "min": 0.05,
+          "max": 6.23,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "geometric",
+      "title": "Geometric series & partial sums",
+      "unit": 10,
+      "description": "Compare partial sums with a convergent infinite geometric series.",
+      "equation": "Sn=a(1\u2212r\u207f)/(1\u2212r); S\u221e=a/(1\u2212r) if |r|<1",
+      "limits": "BC-only unit. Infinite-sum convergence is conditional on |r|<1 for a nonzero first term.",
+      "goal": "Explain why terms approaching zero is necessary but not sufficient for general series convergence.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "First term a",
+          "value": 1,
+          "min": -3,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "r",
+          "label": "Common ratio r",
+          "value": 0.5,
+          "min": -1.2,
+          "max": 1.2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Terms shown",
+          "value": 10,
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "p-series",
+      "title": "p-series & the integral test",
+      "unit": 10,
+      "description": "Compare finite sums and tail bounds for \u03a31/n\u1d56.",
+      "equation": "\u03a31/n\u1d56 converges exactly when p>1",
+      "limits": "BC-only unit. For p>1, \u222bN+1\u221ef\u2264tail\u2264\u222bN\u221ef. Bounds require positive decreasing f.",
+      "goal": "Explain why a finite partial sum never proves convergence.",
+      "fields": [
+        {
+          "key": "p",
+          "label": "Exponent p",
+          "value": 2,
+          "min": 0.2,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Terms summed",
+          "value": 30,
+          "min": 2,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "alternating",
+      "title": "Alternating series & error bounds",
+      "unit": 10,
+      "description": "Compare an alternating harmonic partial sum with ln 2.",
+      "equation": "\u03a3(\u22121)^(n+1)/n=ln 2; error\u22641/(N+1)",
+      "limits": "BC-only unit. Error bound uses positive decreasing term magnitudes tending to zero; this series is conditionally convergent.",
+      "goal": "Explain how an alternating-series bound differs from its exact error.",
+      "fields": [
+        {
+          "key": "n",
+          "label": "Number of terms",
+          "value": 12,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "ratio",
+      "title": "Ratio test & factorial terms",
+      "unit": 10,
+      "description": "Apply the ratio test to \u03a3x\u207f/n! and compare its partial sum with e\u02e3.",
+      "equation": "lim |a\u2099\u208a\u2081/a\u2099| = lim |x|/(n+1)=0",
+      "limits": "BC-only unit. Terms start at n=0; the series converges absolutely for every finite real x.",
+      "goal": "Explain why a ratio limit of zero establishes convergence.",
+      "fields": [
+        {
+          "key": "x",
+          "label": "x value",
+          "value": 2,
+          "min": -5,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Highest power N",
+          "value": 8,
+          "min": 1,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "taylor-exp",
+      "title": "Taylor polynomials for e\u02e3",
+      "unit": 10,
+      "description": "Compare a centered Taylor polynomial with its function and a Lagrange bound.",
+      "equation": "PN(x)=e\u1d43\u03a3(x\u2212a)\u207f/n!; error\u2264M|x\u2212a|^(N+1)/(N+1)!",
+      "limits": "BC-only unit. M=e^max(a,x) bounds the next derivative on the interval between a and x.",
+      "goal": "Explain why the polynomial center and target distance both matter.",
+      "fields": [
+        {
+          "key": "center",
+          "label": "Expansion center a",
+          "value": 0,
+          "min": -1,
+          "max": 1,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "degree",
+          "label": "Polynomial degree N",
+          "value": 4,
+          "min": 0,
+          "max": 12,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 1,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "taylor-sin",
+      "title": "Maclaurin polynomials for sin x",
+      "unit": 10,
+      "description": "Increase the number of nonzero terms while preserving odd powers.",
+      "equation": "sin x = \u03a3(\u22121)\u207fx^(2n+1)/(2n+1)!",
+      "limits": "BC-only unit. The series converges for every finite x; small-degree approximations can be poor far from zero.",
+      "goal": "Explain why all even-power coefficients vanish.",
+      "fields": [
+        {
+          "key": "terms",
+          "label": "Nonzero terms",
+          "value": 3,
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x (rad)",
+          "value": 1,
+          "min": -4,
+          "max": 4,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "power-interval",
+      "title": "Power series intervals & endpoints",
+      "unit": 10,
+      "description": "Explore the series for ln(1+x) and test its boundary values separately.",
+      "equation": "ln(1+x)=\u03a3(\u22121)^(n+1)x\u207f/n; convergence interval (\u22121,1]",
+      "limits": "BC-only unit. Radius is 1; endpoint x=1 converges conditionally, x=\u22121 diverges.",
+      "goal": "Explain why the ratio test alone does not decide the endpoints.",
+      "fields": [
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 0.5,
+          "min": -0.99,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Number of terms",
+          "value": 15,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "infinite-limits",
+      "title": "Infinite limits & asymptotes",
+      "unit": 1,
+      "description": "Compare signed approaches to a vertical asymptote.",
+      "equation": "f(x)=1/(x\u2212a); opposite sides have opposite infinite limits.",
+      "limits": "The curve is split at its pole; infinities are behavior descriptions, not finite y-values.",
+      "goal": "Explain why opposite signed infinite limits do not produce a two-sided infinite limit.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Asymptote x-coordinate",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Positive approach distance",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "corners",
+      "title": "Continuity & differentiability",
+      "unit": 2,
+      "description": "Compare the continuous absolute-value curve with its unequal one-sided slopes.",
+      "equation": "f=scale\u00b7|x\u2212a| is continuous but not differentiable at a.",
+      "limits": "Piecewise linear family; derivative at the corner is undefined.",
+      "goal": "Explain why continuity is necessary but not sufficient for differentiability.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Corner location a",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "scale",
+          "label": "Positive scale",
+          "value": 1,
+          "min": 0.2,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "inverse-trig",
+      "title": "Inverse trigonometric derivatives",
+      "unit": 3,
+      "description": "Compare arcsin x and its derivative on the interior of its domain.",
+      "equation": "d/dx arcsin x = 1/\u221a(1\u2212x\u00b2)",
+      "limits": "Principal arcsine in radians. Derivative grows without bound near endpoints \u00b11; endpoints are excluded from finite slope estimates.",
+      "goal": "Explain the domain restrictions and why the derivative is positive.",
+      "fields": [
+        {
+          "key": "x",
+          "label": "Input x",
+          "value": 0.5,
+          "min": -0.95,
+          "max": 0.95,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ladder",
+      "title": "Related rates: sliding ladder",
+      "unit": 4,
+      "description": "Relate horizontal and vertical endpoint motion for a fixed-length ladder.",
+      "equation": "x\u00b2+y\u00b2=L\u00b2 \u21d2 dy/dt=\u2212(x/y)dx/dt",
+      "limits": "Rigid ladder, perpendicular wall and level floor; requires 0<x<L.",
+      "goal": "Explain why a fixed horizontal rate does not imply a fixed vertical rate.",
+      "fields": [
+        {
+          "key": "length",
+          "label": "Ladder length (m)",
+          "value": 5,
+          "min": 2,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "x",
+          "label": "Base distance from wall (m)",
+          "value": 3,
+          "min": 0.1,
+          "max": 9,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dx",
+          "label": "Base rate away from wall (m/s)",
+          "value": 0.2,
+          "min": -1,
+          "max": 1,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "concavity",
+      "title": "Inflection & concavity tests",
+      "unit": 5,
+      "description": "Separate a change of concavity from a zero second derivative alone.",
+      "equation": "For x\u00b3, f\u2033=6x; for x\u2074, f\u2033=12x\u00b2",
+      "limits": "Both have f\u2033(0)=0, but only x\u00b3 changes concavity at 0.",
+      "goal": "Explain why solving f\u2033=0 produces candidates rather than guaranteed inflection points.",
+      "fields": [
+        {
+          "key": "family",
+          "label": "Function",
+          "value": "cube",
+          "options": [
+            [
+              "cube",
+              "cube"
+            ],
+            [
+              "fourth",
+              "fourth"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "x",
+          "label": "Evaluation x",
+          "value": 0.5,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "trapezoid",
+      "title": "Trapezoidal approximations & data",
+      "unit": 6,
+      "description": "Approximate a definite integral by connecting sampled values.",
+      "equation": "T=\u0394x[(f(a)+f(b))/2 + \u03a3 interior f(x\u1d62)]",
+      "limits": "Uniform samples; not an exact integral for general curved functions. Error depends on curvature and sampling.",
+      "goal": "Explain how trapezoids differ from left-rectangle sums.",
+      "fields": [
+        {
+          "key": "family",
+          "label": "Function family",
+          "value": "square",
+          "options": [
+            [
+              "square",
+              "square"
+            ],
+            [
+              "cube",
+              "cube"
+            ],
+            [
+              "sin",
+              "sin"
+            ],
+            [
+              "exp",
+              "exp"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "a",
+          "label": "Lower bound",
+          "value": 0,
+          "min": -2,
+          "max": 2,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Upper bound",
+          "value": 2,
+          "min": -1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Panels",
+          "value": 6,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "cross-sections",
+      "title": "Volumes from cross sections",
+      "unit": 8,
+      "description": "Compare square, semicircular and equilateral-triangle slices across the same base.",
+      "equation": "Volume=\u222bcross-section area dx; base width is H\u2212x\u00b2",
+      "limits": "Slices perpendicular to x. Semicircle diameter and triangle side equal the base-region width.",
+      "goal": "Explain how the same base region can produce different solid volumes.",
+      "fields": [
+        {
+          "key": "h",
+          "label": "Base-region height H",
+          "value": 4,
+          "min": 0.1,
+          "max": 9,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "shape",
+          "label": "Cross-section shape",
+          "value": "square",
+          "options": [
+            [
+              "square",
+              "square"
+            ],
+            [
+              "semicircle",
+              "semicircle"
+            ],
+            [
+              "triangle",
+              "triangle"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "Limit comparison test",
+      "unit": 10,
+      "description": "Compare n/(n\u00b2+c) with the harmonic series.",
+      "equation": "lim [n/(n\u00b2+c)]/(1/n)=lim n\u00b2/(n\u00b2+c)=1",
+      "limits": "BC-only unit. Both term sequences are positive; a finite positive comparison limit transfers convergence behavior.",
+      "goal": "Explain why these terms approach zero but their series still diverges.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Positive constant c",
+          "value": 2,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Large index n",
+          "value": 100,
+          "min": 2,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    }
+  ]
+}

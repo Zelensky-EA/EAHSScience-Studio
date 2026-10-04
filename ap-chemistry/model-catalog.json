@@ -1,0 +1,1877 @@
+{
+  "title": "AP Chemistry",
+  "domain": "chemistry",
+  "units": [
+    "Atomic Structure and Properties",
+    "Compound Structure and Properties",
+    "Properties of Substances and Mixtures",
+    "Chemical Reactions",
+    "Kinetics",
+    "Thermochemistry",
+    "Equilibrium",
+    "Acids and Bases",
+    "Thermodynamics and Electrochemistry"
+  ],
+  "source": "https://apcentral.collegeboard.org/courses/ap-chemistry",
+  "activities": [
+    {
+      "id": "moles",
+      "title": "Mass, moles & particles",
+      "unit": 1,
+      "description": "Connect macroscopic mass to mole amount and microscopic particle counts.",
+      "equation": "n = m/M; N = nN\u2090",
+      "limits": "Pure substance; the particle identity must be specified. Formula units and molecules are not interchangeable.",
+      "goal": "Explain how equal mole amounts can have different masses.",
+      "fields": [
+        {
+          "key": "mass",
+          "label": "Sample mass (g)",
+          "value": 18,
+          "min": 0,
+          "max": 200,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "molar",
+          "label": "Molar mass (g/mol)",
+          "value": 18.015,
+          "min": 1,
+          "max": 300,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "isotopes",
+      "title": "Isotopes & average atomic mass",
+      "unit": 1,
+      "description": "Change an isotope abundance and distinguish atomic mass from mass number.",
+      "equation": "Average mass = f mA + (1\u2212f)mB",
+      "limits": "Two-isotope teaching mixture; isotope masses are entered, not inferred from integer mass numbers.",
+      "goal": "Explain why the average need not be an integer or the mass of any one atom.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Isotope A mass (u)",
+          "value": 34.96885,
+          "min": 1,
+          "max": 250,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Isotope B mass (u)",
+          "value": 36.9659,
+          "min": 1,
+          "max": 250,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "fraction",
+          "label": "Isotope A abundance (%)",
+          "value": 75.78,
+          "min": 0,
+          "max": 100,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "electrons",
+      "title": "Electron configuration & ions",
+      "unit": 1,
+      "description": "Fill occupied subshells through calcium and compare neutral atoms with ions.",
+      "equation": "Electron count = Z \u2212 ionic charge",
+      "limits": "Ground-state Aufbau filling through 20 electrons. No transition-metal exceptions; subshell boxes are symbolic, not electron trajectories.",
+      "goal": "Distinguish changes in electron number from changes in nuclear identity.",
+      "fields": [
+        {
+          "key": "z",
+          "label": "Atomic number Z",
+          "value": 17,
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "charge",
+          "label": "Ion charge",
+          "value": 0,
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "photoelectrons",
+      "title": "Photoelectron spectroscopy",
+      "unit": 1,
+      "description": "Compare symbolic shell peaks and occupied-electron intensities.",
+      "equation": "Photon energy = binding energy + electron kinetic energy",
+      "limits": "Illustrative shell binding positions, not measured spectra. Peak area represents electron count within this simplified display.",
+      "goal": "Use peak position and area for different kinds of evidence.",
+      "fields": [
+        {
+          "key": "atom",
+          "label": "Atom",
+          "value": "Ne",
+          "options": [
+            [
+              "C",
+              "C"
+            ],
+            [
+              "O",
+              "O"
+            ],
+            [
+              "Ne",
+              "Ne"
+            ],
+            [
+              "Na",
+              "Na"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "scale",
+          "label": "Relative intensity scale",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "photon",
+      "title": "Photon energy & wavelength",
+      "unit": 1,
+      "description": "Connect electromagnetic wavelength, frequency and photon energy.",
+      "equation": "E = hc/\u03bb; \u03bd = c/\u03bb",
+      "limits": "Monochromatic light; photons have energy but this model does not calculate absorption probabilities.",
+      "goal": "Explain the inverse wavelength\u2013energy relationship.",
+      "fields": [
+        {
+          "key": "lambda",
+          "label": "Wavelength (nm)",
+          "value": 500,
+          "min": 50,
+          "max": 1500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "coulomb",
+      "title": "Ionic attraction & distance",
+      "unit": 2,
+      "description": "Explore the inverse-distance energy of two point charges.",
+      "equation": "U \u221d q\u2081q\u2082/r",
+      "limits": "Point-charge energy in vacuum; actual lattice enthalpy sums many interactions and includes repulsion.",
+      "goal": "Compare charge magnitude and separation without equating pair energy to lattice enthalpy.",
+      "fields": [
+        {
+          "key": "q1",
+          "label": "Charge 1 (elementary charges)",
+          "value": 1,
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "q2",
+          "label": "Charge 2 (elementary charges)",
+          "value": -1,
+          "min": -3,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "r",
+          "label": "Separation (nm)",
+          "value": 0.3,
+          "min": 0.1,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "vsepr",
+      "title": "VSEPR geometry & lone pairs",
+      "unit": 2,
+      "description": "Change electron domains and distinguish electron geometry from molecular geometry.",
+      "equation": "Electron-domain geometry depends on domain count; molecular geometry depends on atom positions.",
+      "limits": "Ideal domain model. A multiple bond counts as one domain; real bond angles depend on the molecule.",
+      "goal": "Explain why tetrahedral electron geometry does not always mean tetrahedral molecular geometry.",
+      "fields": [
+        {
+          "key": "domains",
+          "label": "Total electron domains",
+          "value": 4,
+          "min": 2,
+          "max": 6,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "lone",
+          "label": "Central-atom lone pairs",
+          "value": 1,
+          "min": 0,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "formal-charge",
+      "title": "Lewis structures & formal charge",
+      "unit": 2,
+      "description": "Account for assigned electrons without treating formal charge as measured partial charge.",
+      "equation": "FC = valence \u2212 nonbonding \u2212 bonding/2",
+      "limits": "One atom in a proposed Lewis structure. This does not validate the total molecular electron count or octet.",
+      "goal": "Use charge bookkeeping alongside total electrons, resonance and bonding.",
+      "fields": [
+        {
+          "key": "valence",
+          "label": "Valence electrons on isolated atom",
+          "value": 5,
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "nonbond",
+          "label": "Nonbonding electrons on atom",
+          "value": 2,
+          "min": 0,
+          "max": 8,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "bonding",
+          "label": "Bonding electrons around atom",
+          "value": 6,
+          "min": 0,
+          "max": 12,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "polarity",
+      "title": "Bond dipoles & molecular polarity",
+      "unit": 2,
+      "description": "Compare symmetry and cancellation for common ideal molecular geometries.",
+      "equation": "Molecular dipole = vector sum of bond dipoles",
+      "limits": "Ideal geometry and identical bond dipoles within each example. Relative values are schematic, not measured debye.",
+      "goal": "Explain why polar bonds can occur in a nonpolar molecule.",
+      "fields": [
+        {
+          "key": "molecule",
+          "label": "Molecule",
+          "value": "H2O",
+          "options": [
+            [
+              "CO2",
+              "CO2"
+            ],
+            [
+              "H2O",
+              "H2O"
+            ],
+            [
+              "BF3",
+              "BF3"
+            ],
+            [
+              "NH3",
+              "NH3"
+            ],
+            [
+              "CH4",
+              "CH4"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "bond",
+          "label": "Relative bond-dipole magnitude",
+          "value": 1,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "gas-law",
+      "title": "Ideal gases",
+      "unit": 3,
+      "description": "Manipulate gas amount, temperature and volume while preserving units.",
+      "equation": "P = nRT/V; R = 0.082057 L\u00b7atm/(mol\u00b7K)",
+      "limits": "Ideal gas behavior; intermolecular interactions and finite particle volume are omitted.",
+      "goal": "Explain why pressure depends on absolute temperature.",
+      "fields": [
+        {
+          "key": "n",
+          "label": "Amount (mol)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Temperature (K)",
+          "value": 300,
+          "min": 100,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "v",
+          "label": "Volume (L)",
+          "value": 24,
+          "min": 0.1,
+          "max": 100,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "partial-pressure",
+      "title": "Gas mixtures & partial pressures",
+      "unit": 3,
+      "description": "Connect component amount to mole fraction and partial pressure.",
+      "equation": "PA = xA Ptotal",
+      "limits": "Ideal, nonreacting mixture. Composition changes do not imply any specified container mechanics.",
+      "goal": "Distinguish mole fraction from a mass fraction.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Gas A (mol)",
+          "value": 1,
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Gas B (mol)",
+          "value": 3,
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "p",
+          "label": "Total pressure (atm)",
+          "value": 1,
+          "min": 0.01,
+          "max": 10,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "molecular-speed",
+      "title": "Kinetic molecular theory",
+      "unit": 3,
+      "description": "Compare ideal-gas speed distributions for different molar masses.",
+      "equation": "vrms = \u221a(3RT/M)",
+      "limits": "Maxwell\u2013Boltzmann ideal-gas distribution; M must be kg/mol in the speed equation.",
+      "goal": "Explain why equal-temperature gases share average kinetic energy rather than equal speed.",
+      "fields": [
+        {
+          "key": "m",
+          "label": "Molar mass (g/mol)",
+          "value": 28,
+          "min": 2,
+          "max": 150,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Temperature (K)",
+          "value": 300,
+          "min": 100,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "dilution",
+      "title": "Solutions & dilution",
+      "unit": 3,
+      "description": "Conserve solute amount when changing solution volume.",
+      "equation": "C\u2081V\u2081 = C\u2082V\u2082",
+      "limits": "Volumes describe final solution volume, not water added; no solute loss or reaction.",
+      "goal": "Explain how concentration changes while solute amount remains constant.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Stock concentration (M)",
+          "value": 1,
+          "min": 0.001,
+          "max": 5,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "v1",
+          "label": "Stock volume used (mL)",
+          "value": 10,
+          "min": 1,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "v2",
+          "label": "Final solution volume (mL)",
+          "value": 100,
+          "min": 1,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "beer-law",
+      "title": "Spectrophotometry & Beer\u2013Lambert law",
+      "unit": 3,
+      "description": "Relate concentration and optical path to absorbance and transmittance.",
+      "equation": "A = \u03b5\u2113c; T = 10^(\u2212A)",
+      "limits": "Monochromatic, dilute solution with constant absorptivity; scattering and instrument saturation are omitted.",
+      "goal": "Explain why absorbance is linear in concentration but transmittance is not.",
+      "fields": [
+        {
+          "key": "epsilon",
+          "label": "Molar absorptivity (L/mol/cm)",
+          "value": 100,
+          "min": 1,
+          "max": 10000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "path",
+          "label": "Path length (cm)",
+          "value": 1,
+          "min": 0.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "c",
+          "label": "Concentration (M)",
+          "value": 0.01,
+          "min": 1e-05,
+          "max": 0.2,
+          "step": 0.0001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "stoichiometry",
+      "title": "Limiting reactants & reaction extent",
+      "unit": 4,
+      "description": "Track consumption and formation in a supplied balanced coefficient ratio.",
+      "equation": "Maximum extent \u03be = min(nA/a, nB/b); product = c\u03be",
+      "limits": "The entered coefficients must belong to an actually balanced reaction; this ratio model cannot infer elemental formulas.",
+      "goal": "Explain why the smaller initial amount is not necessarily the limiting reactant.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Initial reactant A (mol)",
+          "value": 3,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Initial reactant B (mol)",
+          "value": 4,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ca",
+          "label": "Coefficient of A",
+          "value": 1,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "cb",
+          "label": "Coefficient of B",
+          "value": 2,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "cp",
+          "label": "Coefficient of product",
+          "value": 1,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "fraction",
+          "label": "Fraction of maximum extent (%)",
+          "value": 100,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "yield",
+      "title": "Theoretical, actual & percent yield",
+      "unit": 4,
+      "description": "Distinguish stoichiometric prediction from measured recovery.",
+      "equation": "Percent yield = actual/theoretical \u00d7 100",
+      "limits": "A value above 100% can signal wet or impure product, an incorrect theoretical yield or measurement error.",
+      "goal": "Explain why high percent yield alone does not establish purity.",
+      "fields": [
+        {
+          "key": "theory",
+          "label": "Theoretical product mass (g)",
+          "value": 10,
+          "min": 0.01,
+          "max": 200,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "actual",
+          "label": "Recovered product mass (g)",
+          "value": 8,
+          "min": 0,
+          "max": 250,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "net-ionic",
+      "title": "Net ionic reactions",
+      "unit": 4,
+      "description": "Separate reacting ions from spectators in precipitation and neutralization.",
+      "equation": "Net ionic equations conserve both atoms and total charge.",
+      "limits": "Canonical aqueous examples; solubility equilibria and reagent exhaustion are not dynamically simulated.",
+      "goal": "Explain which species change and why spectators cancel.",
+      "fields": [
+        {
+          "key": "reaction",
+          "label": "Reaction",
+          "value": "AgCl",
+          "options": [
+            [
+              "AgCl",
+              "AgCl"
+            ],
+            [
+              "BaSO4",
+              "BaSO4"
+            ],
+            [
+              "neutralization",
+              "neutralization"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "extent",
+          "label": "Reacting amount (mmol)",
+          "value": 2,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "redox",
+      "title": "Redox & electron accounting",
+      "unit": 4,
+      "description": "Connect metal oxidation to transferred electrons.",
+      "equation": "Electrons lost in oxidation equal electrons gained in reduction.",
+      "limits": "Selected half-reactions only; full reaction feasibility requires a coupled reduction and conditions.",
+      "goal": "Explain why electron amount depends on the oxidation-state change.",
+      "fields": [
+        {
+          "key": "metal",
+          "label": "Oxidized metal",
+          "value": "Zn",
+          "options": [
+            [
+              "Zn",
+              "Zn \u2192 Zn\u00b2\u207a"
+            ],
+            [
+              "Al",
+              "Al \u2192 Al\u00b3\u207a"
+            ],
+            [
+              "Mg",
+              "Mg \u2192 Mg\u00b2\u207a"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "n",
+          "label": "Metal amount oxidized (mol)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 2,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "rate-law",
+      "title": "Rate laws & reaction order",
+      "unit": 5,
+      "description": "Manipulate independently specified empirical orders.",
+      "equation": "Rate = k[A]^m[B]^n",
+      "limits": "Empirical orders need not equal overall stoichiometric coefficients. k units are M^(1\u2212m\u2212n)/s.",
+      "goal": "Explain why changing concentration can have different rate effects for different orders.",
+      "fields": [
+        {
+          "key": "k",
+          "label": "Rate constant (units depend on order)",
+          "value": 0.2,
+          "min": 0.001,
+          "max": 5,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "a",
+          "label": "[A] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "[B] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "m",
+          "label": "Order in A",
+          "value": 1,
+          "min": 0,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Order in B",
+          "value": 0,
+          "min": 0,
+          "max": 3,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "initial-rates",
+      "title": "Initial-rate evidence",
+      "unit": 5,
+      "description": "Infer an order from trials that hold other reactants constant.",
+      "equation": "Order m = ln(rate ratio)/ln(concentration ratio)",
+      "limits": "One reactant varied; temperature, catalyst and other concentrations remain constant. Measurement uncertainty is omitted.",
+      "goal": "Explain why both ratios are needed to infer order.",
+      "fields": [
+        {
+          "key": "ratio",
+          "label": "Concentration trial 2/trial 1",
+          "value": 2,
+          "min": 1.1,
+          "max": 5,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "rate",
+          "label": "Rate trial 2/trial 1",
+          "value": 4,
+          "min": 0.1,
+          "max": 25,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "integrated-rate",
+      "title": "Integrated rate laws & half-life",
+      "unit": 5,
+      "description": "Compare zero-, first- and second-order single-reactant decay.",
+      "equation": "Zero: A=A\u2080\u2212kt; first: A=A\u2080e^(\u2212kt); second: A=A\u2080/(1+kA\u2080t)",
+      "limits": "Single-reactant irreversible model. Zero-order decay is stopped at depletion. The rate-constant units change with order.",
+      "goal": "Compare how half-life depends on starting concentration.",
+      "fields": [
+        {
+          "key": "order",
+          "label": "Order",
+          "value": "first",
+          "options": [
+            [
+              "zero",
+              "zero"
+            ],
+            [
+              "first",
+              "first"
+            ],
+            [
+              "second",
+              "second"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "initial",
+          "label": "Initial [A] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "k (M/s, 1/s or 1/M/s by order)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Elapsed time (s)",
+          "value": 5,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "arrhenius",
+      "title": "Activation energy & temperature",
+      "unit": 5,
+      "description": "Explore the exponential dependence of a model rate constant on temperature.",
+      "equation": "k = A exp(\u2212Ea/RT)",
+      "limits": "Arrhenius parameters are constant; the model is not an elementary collision simulation.",
+      "goal": "Explain how lowering Ea differs from making \u0394G more negative.",
+      "fields": [
+        {
+          "key": "ea",
+          "label": "Activation energy (kJ/mol)",
+          "value": 50,
+          "min": 0,
+          "max": 150,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "pre",
+          "label": "Pre-exponential factor (1/s)",
+          "value": 10000000000,
+          "min": 1,
+          "max": 1000000000000000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Temperature (K)",
+          "value": 300,
+          "min": 200,
+          "max": 700,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "calorimetry",
+      "title": "Calorimetry & reaction heat",
+      "unit": 6,
+      "description": "Account for solution heating and the opposite heat sign for a reaction.",
+      "equation": "qsolution = mc\u0394T; qreaction = \u2212qsolution",
+      "limits": "Adiabatic simplified calorimeter; vessel heat capacity and heat loss are omitted.",
+      "goal": "Explain the sign of reaction heat when the solution warms.",
+      "fields": [
+        {
+          "key": "mass",
+          "label": "Solution mass (g)",
+          "value": 100,
+          "min": 1,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "c",
+          "label": "Specific heat (J/g/\u00b0C)",
+          "value": 4.18,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dt",
+          "label": "Solution temperature change (\u00b0C)",
+          "value": 5,
+          "min": -50,
+          "max": 50,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "mol",
+          "label": "Amount reacted (mol)",
+          "value": 0.05,
+          "min": 0.001,
+          "max": 2,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "heating",
+      "title": "Heating curves & phase changes",
+      "unit": 6,
+      "description": "Allocate energy to heating ice, melting and warming water at 1 atm.",
+      "equation": "q = mc\u0394T within a phase; q = mL during a phase change",
+      "limits": "Pure water at 1 atm, cice=2.09 and cwater=4.18 J/g/\u00b0C, fusion=334 J/g. View stops at 100 \u00b0C; boiling is not modeled.",
+      "goal": "Explain why temperature can stay constant while energy is supplied.",
+      "fields": [
+        {
+          "key": "mass",
+          "label": "Water mass (g)",
+          "value": 10,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "start",
+          "label": "Starting ice temperature (\u00b0C)",
+          "value": -20,
+          "min": -50,
+          "max": 0,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "heat",
+          "label": "Energy supplied (J)",
+          "value": 5000,
+          "min": 0,
+          "max": 50000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "hess",
+      "title": "Hess\u2019s law",
+      "unit": 6,
+      "description": "Scale and reverse supplied reaction steps and sum their enthalpies.",
+      "equation": "\u0394Hnet = \u03a3 multiplier \u00d7 \u0394Hstep",
+      "limits": "Energy bookkeeping only. You must also combine chemical equations and cancel intermediates correctly.",
+      "goal": "Explain why reversing a step reverses its enthalpy sign.",
+      "fields": [
+        {
+          "key": "h1",
+          "label": "Step 1 \u0394H (kJ)",
+          "value": -100,
+          "min": -500,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h2",
+          "label": "Step 2 \u0394H (kJ)",
+          "value": 50,
+          "min": -500,
+          "max": 500,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "c1",
+          "label": "Multiplier for step 1",
+          "value": 1,
+          "min": -5,
+          "max": 5,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "c2",
+          "label": "Multiplier for step 2",
+          "value": 2,
+          "min": -5,
+          "max": 5,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "bond-enthalpy",
+      "title": "Bond enthalpy estimates",
+      "unit": 6,
+      "description": "Compare energy to break bonds with energy released forming bonds.",
+      "equation": "Estimated \u0394H = \u03a3Dbroken \u2212 \u03a3Dformed",
+      "limits": "Average gas-phase bond enthalpies are estimates, not exact reaction enthalpies in every phase.",
+      "goal": "Explain why breaking bonds requires energy rather than releasing it.",
+      "fields": [
+        {
+          "key": "broken",
+          "label": "Sum of bonds broken (kJ/mol reaction)",
+          "value": 800,
+          "min": 0,
+          "max": 3000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "formed",
+          "label": "Sum of bonds formed (kJ/mol reaction)",
+          "value": 1000,
+          "min": 0,
+          "max": 3000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "ice",
+      "title": "ICE equilibrium: A \u21cc B",
+      "unit": 7,
+      "description": "Find an equilibrium composition from conservation and an entered Kc.",
+      "equation": "Kc = [B]eq/[A]eq; [A]+[B] is conserved",
+      "limits": "Ideal 1:1 closed system with fixed volume and temperature. No reaction rates are predicted.",
+      "goal": "Explain why equilibrium does not require equal concentrations.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "Initial [A] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "Initial [B] (M)",
+          "value": 0,
+          "min": 0,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Kc",
+          "value": 4,
+          "min": 0.01,
+          "max": 100,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "reaction-quotient",
+      "title": "Reaction quotient & direction",
+      "unit": 7,
+      "description": "Compare Q to K for A + B \u21cc C before equilibrium is reached.",
+      "equation": "Qc = [C]/([A][B]); Q<K favors net forward change",
+      "limits": "Activities approximated by concentrations relative to 1 M; direction does not imply a rate or exact extent.",
+      "goal": "Explain why Q and K have the same expression but different roles.",
+      "fields": [
+        {
+          "key": "a",
+          "label": "[A] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "b",
+          "label": "[B] (M)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "c",
+          "label": "[C] (M)",
+          "value": 0.2,
+          "min": 0,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Kc (concentration standard state)",
+          "value": 2,
+          "min": 0.01,
+          "max": 100,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "solubility",
+      "title": "Solubility & common ions",
+      "unit": 7,
+      "description": "Calculate a 1:1 salt\u2019s equilibrium solubility in the presence of a common ion.",
+      "equation": "Ksp = s(s + ccommon)",
+      "limits": "Ideal AB salt; no complex formation, acid\u2013base chemistry or activity-coefficient corrections.",
+      "goal": "Explain why a common ion lowers solubility without changing Ksp at fixed temperature.",
+      "fields": [
+        {
+          "key": "ksp",
+          "label": "Ksp",
+          "value": 1e-08,
+          "min": 1e-12,
+          "max": 0.001,
+          "step": 1e-08,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "common",
+          "label": "Initial common-ion concentration (M)",
+          "value": 0.001,
+          "min": 0,
+          "max": 0.1,
+          "step": 0.0001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "haber",
+      "title": "Compression & equilibrium",
+      "unit": 7,
+      "description": "Solve an ideal N\u2082 + 3H\u2082 \u21cc 2NH\u2083 equilibrium after changing volume.",
+      "equation": "Kc = [NH\u2083]\u00b2/([N\u2082][H\u2082]\u00b3)",
+      "limits": "Fixed-temperature ideal concentration model; actual industrial kinetics, heat release and nonideal gas effects are omitted.",
+      "goal": "Explain why changing volume changes equilibrium composition but not K at fixed temperature.",
+      "fields": [
+        {
+          "key": "n",
+          "label": "Initial N\u2082 (mol)",
+          "value": 1,
+          "min": 0.01,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Initial H\u2082 (mol)",
+          "value": 3,
+          "min": 0.01,
+          "max": 15,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "a",
+          "label": "Initial NH\u2083 (mol)",
+          "value": 0.5,
+          "min": 0,
+          "max": 5,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "v",
+          "label": "Volume (L)",
+          "value": 1,
+          "min": 0.1,
+          "max": 10,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "k",
+          "label": "Kc",
+          "value": 1,
+          "min": 0.01,
+          "max": 20,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "strong-ph",
+      "title": "Strong acids & bases",
+      "unit": 8,
+      "description": "Connect analytical concentration to pH including water autoionization.",
+      "equation": "[H\u207a][OH\u207b] = 10\u207b\u00b9\u2074 at 25 \u00b0C",
+      "limits": "Fully dissociated monoprotic acid or monovalent strong base; ideal dilute concentration approximation.",
+      "goal": "Explain why an extremely dilute acid approaches pH 7 rather than becoming basic.",
+      "fields": [
+        {
+          "key": "kind",
+          "label": "Solution",
+          "value": "acid",
+          "options": [
+            [
+              "acid",
+              "acid"
+            ],
+            [
+              "base",
+              "base"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "c",
+          "label": "Analytical concentration (M)",
+          "value": 0.001,
+          "min": 1e-10,
+          "max": 1,
+          "step": 0.0001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "weak-acid",
+      "title": "Weak-acid equilibrium",
+      "unit": 8,
+      "description": "Solve charge and mass balance instead of assuming all acid dissociates.",
+      "equation": "Ka = [H\u207a][A\u207b]/[HA]; charge and mass balances constrain the solution",
+      "limits": "Ideal monoprotic acid at 25 \u00b0C; includes water autoionization. No polyprotic or activity corrections.",
+      "goal": "Explain the difference between acid strength and acid concentration.",
+      "fields": [
+        {
+          "key": "c",
+          "label": "Analytical acid concentration (M)",
+          "value": 0.1,
+          "min": 1e-06,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ka",
+          "label": "Ka",
+          "value": 1.8e-05,
+          "min": 1e-10,
+          "max": 0.1,
+          "step": 1e-06,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "buffer",
+      "title": "Buffer composition",
+      "unit": 8,
+      "description": "Explore a buffer ratio while separating pH from buffer capacity.",
+      "equation": "pH \u2248 pKa + log\u2081\u2080([A\u207b]/[HA])",
+      "limits": "Henderson\u2013Hasselbalch approximation using supplied concentrations. Does not directly calculate buffer capacity or titration reactions.",
+      "goal": "Explain why two buffers with the same ratio can resist added acid differently.",
+      "fields": [
+        {
+          "key": "pka",
+          "label": "pKa",
+          "value": 4.76,
+          "min": 1,
+          "max": 12,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "acid",
+          "label": "[HA] (M)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "base",
+          "label": "[A\u207b] (M)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "titration",
+      "title": "Weak-acid/strong-base titration",
+      "unit": 8,
+      "description": "Solve pH throughout a titration, including the equivalence region.",
+      "equation": "[H\u207a]+[Na\u207a] = [OH\u207b]+[A\u207b], with mass balance and Ka",
+      "limits": "Ideal monoprotic acid titrated with monovalent strong base at 25 \u00b0C. Constant volumes are additive; water autoionization is included.",
+      "goal": "Explain why weak-acid equivalence is not generally pH 7.",
+      "fields": [
+        {
+          "key": "ca",
+          "label": "Acid concentration (M)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "va",
+          "label": "Initial acid volume (mL)",
+          "value": 25,
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "cb",
+          "label": "Base concentration (M)",
+          "value": 0.1,
+          "min": 0.001,
+          "max": 1,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ka",
+          "label": "Acid Ka",
+          "value": 1.8e-05,
+          "min": 1e-08,
+          "max": 0.01,
+          "step": 1e-06,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "vb",
+          "label": "Added base volume (mL)",
+          "value": 10,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "gibbs",
+      "title": "Entropy, enthalpy & Gibbs energy",
+      "unit": 9,
+      "description": "Separate favorable direction from reaction speed and explore temperature dependence.",
+      "equation": "\u0394G = \u0394H \u2212 T\u0394S",
+      "limits": "Thermodynamic parameters held constant with temperature; a favorable sign does not specify reaction rate.",
+      "goal": "Explain how temperature can change favorability when \u0394H and \u0394S have the same sign.",
+      "fields": [
+        {
+          "key": "h",
+          "label": "\u0394H (kJ/mol)",
+          "value": -40,
+          "min": -200,
+          "max": 200,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "s",
+          "label": "\u0394S (J/mol/K)",
+          "value": -100,
+          "min": -400,
+          "max": 400,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Temperature (K)",
+          "value": 298,
+          "min": 100,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "equilibrium-energy",
+      "title": "Standard Gibbs energy & equilibrium",
+      "unit": 9,
+      "description": "Connect a standard free-energy difference to an equilibrium constant.",
+      "equation": "\u0394G\u00b0 = \u2212RT ln K",
+      "limits": "K is dimensionless with defined standard states. \u0394G\u00b0 is not \u0394G for every current composition.",
+      "goal": "Explain why a large K need not imply that a reaction is fast.",
+      "fields": [
+        {
+          "key": "g",
+          "label": "\u0394G\u00b0 (kJ/mol)",
+          "value": -10,
+          "min": -100,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t",
+          "label": "Temperature (K)",
+          "value": 298,
+          "min": 200,
+          "max": 1000,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "cell",
+      "title": "Galvanic cells & Nernst equation",
+      "unit": 9,
+      "description": "Compare standard potential with a nonstandard reaction quotient.",
+      "equation": "E = E\u00b0 \u2212 (0.05916/n)log\u2081\u2080Q at 25 \u00b0C; \u0394G = \u2212nFE",
+      "limits": "Ideal activity approximation at 25 \u00b0C; no overpotential, resistance or electrode kinetics.",
+      "goal": "Explain why spontaneous cell direction depends on current composition.",
+      "fields": [
+        {
+          "key": "e",
+          "label": "E\u00b0cell (V)",
+          "value": 1.1,
+          "min": -2,
+          "max": 2,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Electrons transferred n",
+          "value": 2,
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        },
+        {
+          "key": "q",
+          "label": "Reaction quotient Q",
+          "value": 10,
+          "min": 0.0001,
+          "max": 10000,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "electrolysis",
+      "title": "Electrolysis & Faraday\u2019s law",
+      "unit": 9,
+      "description": "Account for current, time, electrons and deposited metal mass.",
+      "equation": "m = MIt/(nF)",
+      "limits": "100% current efficiency; side reactions and electrode surface effects are omitted.",
+      "goal": "Explain why equal charge can deposit different metal masses.",
+      "fields": [
+        {
+          "key": "i",
+          "label": "Current (A)",
+          "value": 1,
+          "min": 0.01,
+          "max": 10,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "time",
+          "label": "Time (s)",
+          "value": 600,
+          "min": 1,
+          "max": 3600,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "m",
+          "label": "Metal molar mass (g/mol)",
+          "value": 63.546,
+          "min": 1,
+          "max": 250,
+          "step": 0.001,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "n",
+          "label": "Electrons per deposited atom",
+          "value": 2,
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "periodic-trends",
+      "title": "Periodic trends & effective attraction",
+      "unit": 1,
+      "description": "Compare qualitative atomic-radius and ionization-energy tendencies within selected periods.",
+      "equation": "Across a period, increasing nuclear charge generally strengthens effective attraction on valence electrons.",
+      "limits": "Trend explorer, not a numerical radius or ionization-energy predictor; subshell and pairing exceptions matter.",
+      "goal": "Explain a trend using shielding, shell and nuclear charge rather than just a memorized direction.",
+      "fields": [
+        {
+          "key": "period",
+          "label": "Period",
+          "value": "2",
+          "options": [
+            [
+              "2",
+              "2"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ],
+          "type": "select"
+        },
+        {
+          "key": "position",
+          "label": "Main-group position in period",
+          "value": 4,
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "type": "number",
+          "integer": true
+        }
+      ]
+    },
+    {
+      "id": "bond-energy",
+      "title": "Bond energy & separation",
+      "unit": 2,
+      "description": "Compare attractive bonding near equilibrium with short-distance repulsion.",
+      "equation": "Morse teaching curve U=De(1\u2212e^(\u2212\u03b1(r\u2212r0)))\u00b2\u2212De",
+      "limits": "Illustrative diatomic potential, not measured molecular data. Minimum energy at r0; dissociation approaches zero at large r.",
+      "goal": "Explain why both too-close and too-far separations differ from the energy minimum.",
+      "fields": [
+        {
+          "key": "de",
+          "label": "Well depth De (kJ/mol)",
+          "value": 400,
+          "min": 50,
+          "max": 800,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "r0",
+          "label": "Equilibrium separation (nm)",
+          "value": 0.15,
+          "min": 0.1,
+          "max": 0.3,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "alpha",
+          "label": "Shape parameter (1/nm)",
+          "value": 20,
+          "min": 5,
+          "max": 30,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "imf",
+      "title": "Intermolecular forces & properties",
+      "unit": 3,
+      "description": "Compare structural evidence for hydrogen bonding, dipole attractions and dispersion.",
+      "equation": "All molecules exhibit dispersion; additional attractions depend on structure.",
+      "limits": "Qualitative examples. Boiling points also depend on size, shape and pressure; this tool does not predict a measured value.",
+      "goal": "Explain a property using actual molecular interactions.",
+      "fields": [
+        {
+          "key": "molecule",
+          "label": "Example molecule",
+          "value": "ethanol",
+          "options": [
+            [
+              "methane",
+              "methane"
+            ],
+            [
+              "water",
+              "water"
+            ],
+            [
+              "ethanol",
+              "ethanol"
+            ],
+            [
+              "acetone",
+              "acetone"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "mechanisms",
+      "title": "Reaction mechanisms & rate-determining steps",
+      "unit": 5,
+      "description": "Compare an elementary step with an overall reaction.",
+      "equation": "An elementary A+B step has a rate proportional to [A][B]; a multistep overall reaction requires mechanism analysis.",
+      "limits": "Two qualitative mechanism examples, not fitted kinetic data. A slow-step expression may need intermediate elimination.",
+      "goal": "Explain why an overall coefficient does not generally determine reaction order.",
+      "fields": [
+        {
+          "key": "path",
+          "label": "Proposed path",
+          "value": "elementary",
+          "options": [
+            [
+              "elementary",
+              "elementary"
+            ],
+            [
+              "intermediate",
+              "intermediate"
+            ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "id": "catalysis",
+      "title": "Catalysis & reaction energy",
+      "unit": 6,
+      "description": "Change a reaction barrier while preserving the reactant-to-product energy difference.",
+      "equation": "Catalysts lower activation barriers without changing reaction \u0394G or equilibrium K.",
+      "limits": "Illustrative reaction-coordinate curves, not measured energy surfaces. Both barriers must lie above both endpoints.",
+      "goal": "Explain why faster forward and reverse reactions do not shift the equilibrium constant.",
+      "fields": [
+        {
+          "key": "barrier",
+          "label": "Uncatalyzed forward barrier (kJ/mol)",
+          "value": 60,
+          "min": 10,
+          "max": 120,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "lowering",
+          "label": "Barrier reduction (kJ/mol)",
+          "value": 25,
+          "min": 0,
+          "max": 80,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "dg",
+          "label": "Product\u2212reactant energy (kJ/mol)",
+          "value": -20,
+          "min": -50,
+          "max": 50,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "temperature-k",
+      "title": "Temperature & equilibrium constant",
+      "unit": 7,
+      "description": "Explore the van \u2019t Hoff relation for a fixed reaction enthalpy.",
+      "equation": "ln(K\u2082/K\u2081)=\u2212\u0394H\u00b0/R(1/T\u2082\u22121/T\u2081)",
+      "limits": "Constant \u0394H\u00b0 approximation; quantitative van \u2019t Hoff calculation is an introductory-college extension of AP equilibrium reasoning.",
+      "goal": "Explain why temperature can change K while concentration changes at fixed temperature do not.",
+      "fields": [
+        {
+          "key": "k1",
+          "label": "K at reference temperature",
+          "value": 1,
+          "min": 0.01,
+          "max": 100,
+          "step": 0.01,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t1",
+          "label": "Reference temperature (K)",
+          "value": 298,
+          "min": 250,
+          "max": 600,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "t2",
+          "label": "New temperature (K)",
+          "value": 350,
+          "min": 250,
+          "max": 600,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "h",
+          "label": "Reaction \u0394H\u00b0 (kJ/mol)",
+          "value": 40,
+          "min": -100,
+          "max": 100,
+          "step": 1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    },
+    {
+      "id": "indicator",
+      "title": "Indicators & transition ranges",
+      "unit": 8,
+      "description": "Relate solution pH to protonated and deprotonated indicator fractions.",
+      "equation": "Deprotonated fraction=1/(1+10^(pKa\u2212pH))",
+      "limits": "Ideal single-equilibrium indicator; colors are illustrative and actual visibility depends on concentration and observation.",
+      "goal": "Explain why an indicator transition spans a range rather than one exact pH.",
+      "fields": [
+        {
+          "key": "pka",
+          "label": "Indicator pKa",
+          "value": 7,
+          "min": 2,
+          "max": 12,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        },
+        {
+          "key": "ph",
+          "label": "Solution pH",
+          "value": 7,
+          "min": 0,
+          "max": 14,
+          "step": 0.1,
+          "type": "number",
+          "integer": false
+        }
+      ]
+    }
+  ]
+}

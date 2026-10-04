@@ -1,8 +1,0 @@
-const fs=require('fs'),vm=require('vm'),M=require('./models.js');
-const ctx=vm.createContext({Models:M,document:{getElementById:()=>({})},console});
-const src=fs.readFileSync('app.js','utf8').split("$('tools').innerHTML=")[0];vm.runInContext(src,ctx);
-const keys=['punnett','pedigree','growth','prey','gel','pipette','ph'];fs.mkdirSync('qa-figures',{recursive:true});
-for(const key of keys){const out=vm.runInContext(`current='${key}';renderers[current](states[current])`,ctx);if(!out.figure.includes('<svg'))throw Error(key);fs.writeFileSync(`qa-figures/${key}.svg`,out.figure);}
-const scenarios=[['punnett',{cross:'x',parent1:'Aa',parent2:'aY',answers:false}],['punnett',{cross:'incomplete',parent1:'Aa',parent2:'Aa'}],['growth',{model:'exponential',view:'rate'}],['growth',{model:'logistic',view:'percapita',n0:1200}],['prey',{view:'phase',model:'limited'}],['pedigree',{inheritance:'XLR',status:['unaffected','unaffected','unaffected','affected','unaffected','unaffected','unaffected','unaffected','unaffected','unaffected']}],['gel',{lanes:'Mix: 1000, 1005, 500, 501'}],['pipette',{instrument:'P1000',volume:1000,exercise:'precision',replicates:'990, 995, 1005'}],['ph',{method:'weak'}],['ph',{method:'buffer',display:'paper'}]];
-for(const [i,[key,update]] of scenarios.entries()){const out=vm.runInContext(`current='${key}';Object.assign(states[current],${JSON.stringify(update)});renderers[current](states[current])`,ctx);fs.writeFileSync(`qa-figures/variant-${i}.svg`,out.figure);}
-console.log('PASS: all seven default renderers and ten advanced/blank variants generate SVG without runtime errors.');
